@@ -1,0 +1,213 @@
+import React from 'react';
+import { motion, useInView } from 'framer-motion';
+
+const SolucionesSection = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const productos = [
+    {
+      nombre: "Ananta ERP",
+      descripcion: "Software ERP y Plataforma madre",
+      imagen: "/img/cap/anantacap.png",
+      destacado: true
+    },
+    {
+      nombre: "Varuna",
+      descripcion: "Tu herramienta de monitoreo inteligente",
+      imagen: "/img/cap/varunacap.png",
+      destacado: false
+    },
+    {
+      nombre: "Dashcam",
+      descripcion: "Seguridad con IA integrada",
+      imagen: "/img/cap/DASHCAMS.png",
+      destacado: true
+    },
+    {
+      nombre: "Equipos GPS",
+      descripcion: "Equipos de alta gama",
+      imagen: "/img/cap/EQUIPOS.png",
+      destacado: false
+    },
+    ,
+    {
+      nombre: "Plataforma Robusta",
+      descripcion: "Plataforma de Rastreo",
+      imagen: "/img/cap/RASTREO.png",
+      destacado: true
+    },
+    {
+      nombre: "Monitoreo Activo",
+      descripcion: "Asistencia 24/7",
+      imagen: "/img/cap/CAMIONES.png",
+      destacado: false
+    }
+    
+  ];
+
+  // Animaciones
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  return (
+    <div 
+      ref={ref}
+      className="bg-[#0a0a0a] py-16 px-6 relative overflow-hidden"
+    >
+      {/* Efectos de fondo animados */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.2 } : { opacity: 0 }}
+          transition={{ duration: 1.5, delay: 0.3 }}
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#326a10] rounded-full filter blur-[90px]"
+        ></motion.div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.15 } : { opacity: 0 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+          className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-secondary rounded-full filter blur-[100px]"
+        ></motion.div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.15 } : { opacity: 0 }}
+          transition={{ duration: 1.5, delay: 0.7 }}
+          className="absolute top-1/3 right-1/3 w-80 h-80 bg-[#8bda5a] rounded-full filter blur-[80px]"
+        ></motion.div>
+      </div>
+      
+      {/* Contenido principal */}
+      <motion.div 
+        className="container mx-auto relative z-10"
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={containerVariants}
+      >
+        {/* Encabezado */}
+        <motion.div 
+          className="text-center mb-16"
+          variants={fadeInVariants}
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A]">
+            Más de nuestras soluciones
+          </h2>
+          <p className="text-lg md:text-xl font-light max-w-2xl mx-auto text-gray-300">
+            Somos una empresa comprometida con brindarte el mejor servicio en Software ERP y además ofrecemos soluciones con IA integrada
+          </p>
+        </motion.div>
+        
+        {/* Grid de productos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {productos.map((producto, index) => (
+            <motion.div 
+              key={index}
+              className={`relative rounded-xl overflow-hidden border border-[#2a2a2a] transition-all duration-300 hover:shadow-lg hover:shadow-[#9BBF5F]/20 group ${
+                producto.destacado ? 'md:col-span-2 h-80' : 'h-64'
+              }`}
+              variants={itemVariants}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+            >
+              {/* Fondo con imagen */}
+              <div className="absolute inset-0">
+                <img 
+                  src={producto.imagen} 
+                  alt={producto.nombre}
+                  className="w-full h-full object-cover  group-hover:opacity-40 transition-opacity duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/60 to-[#0a0a0a]/90"></div>
+              </div>
+              
+              {/* Efecto de gradiente */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#326a10] to-secondary rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500"></div>
+              
+              {/* Contenido */}
+              <div className="relative h-full p-6 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">{producto.nombre}</h3>
+                  <p className="text-gray-300">{producto.descripcion}</p>
+                </div>
+              </div>
+              
+              {/* Efecto de borde */}
+              <div className="absolute inset-0 rounded-xl pointer-events-none border border-transparent group-hover:border-[#9BBF5F]/50 transition-all duration-500"></div>
+              
+              {/* Efecto de brillo al pasar el mouse */}
+              <div className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#9BBF5F] rounded-full filter blur-[60px] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        
+        {/* Botón ver más */}
+        {/* <motion.div 
+          className="text-center mt-16"
+          variants={fadeInVariants}
+        >
+          <motion.button 
+            className="border border-[#326a10] text-[#9BBF5F] font-bold py-3 px-8 rounded-full hover:bg-[#326a10]/20 transition-all duration-300 flex items-center mx-auto"
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: "0 5px 15px rgba(50, 106, 16, 0.3)"
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Ver todas las soluciones
+            <motion.svg 
+              className="w-5 h-5 ml-2" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+              animate={isInView ? { y: [0, 5, 0] } : { y: 0 }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 2,
+                ease: "easeInOut"
+              }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </motion.svg>
+          </motion.button>
+        </motion.div> */}
+      </motion.div>
+    </div>
+  );
+};
+
+export default SolucionesSection;
