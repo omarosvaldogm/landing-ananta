@@ -79,7 +79,7 @@ const ToolsSection = () => {
       >
         {/* Lado izquierdo: Texto */}
         <motion.div 
-          className="w-full md:w-1/2 text-center md:text-left mb-10 md:mb-0"
+          className="w-full md:w-1/2 text-center md:text-left mb-10 md:mb-0 relative z-20"
           variants={containerVariants}
         >
           <motion.h2 
@@ -104,7 +104,7 @@ const ToolsSection = () => {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative z-30"
             variants={itemVariants}
           >
             <Link to={'/contacto'}>
@@ -121,7 +121,7 @@ const ToolsSection = () => {
 
         {/* Lado derecho: Logo grande transparente */}
         <motion.div 
-          className="w-full md:w-1/2 flex justify-center relative"
+          className="w-full md:w-1/2 flex justify-center relative z-10"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -133,7 +133,7 @@ const ToolsSection = () => {
               animate={isInView ? { opacity: 0.4 } : { opacity: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              <img src="/img/LOGOANANTA.png" alt="Logo Ananta" />
+              <img src="/img/LOGOANANTA.png" alt="Logo Ananta" className="w-full h-auto" />
             </motion.div>
           </div>
         </motion.div>
