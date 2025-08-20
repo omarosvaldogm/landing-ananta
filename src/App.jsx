@@ -42,7 +42,11 @@ function App() {
         <Route path="/gps" element={<GPSPage />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/erp-empresarial" element={<PymesPage />} />
+
         <Route path="/soluciones-pymes" element={<LandingPymes />} />
+        <Route path="/pymes" element={<LandingPymes />} />
+        <Route path="/plan-pymes" element={<LandingPymes />} />
+
         <Route path="/politicas" element={<PoliticasPage />} />
         <Route path="/terminos" element={<TerminosPage />} />
         <Route path="/compra/:id" element={<CompraPage />} />
