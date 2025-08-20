@@ -289,7 +289,7 @@ const Header = () => {
                     Plataforma de rastreo
                   </button>
                   <button 
-                    onClick={() => redirectToExternalPage('https://www.ananta.com.mx')}
+                    onClick={() => redirectToExternalPage('https://wwww.ananta.com.mx')}
                     className="block w-full text-left text-gray-400 hover:text-white transition-colors duration-300 py-1"
                   >
                     Ananta
