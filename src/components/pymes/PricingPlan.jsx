@@ -123,13 +123,13 @@ const PymesHero = () => {
                   <div className="bg-[#9BBF5F]/10 p-1 rounded-full">
                     <FiCheck className="text-[#9BBF5F] text-sm" />
                   </div>
-                  <span className="text-gray-300">8 usuarios incluidos</span>
+                  <span className="text-gray-300">10 usuarios incluidos</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="bg-[#9BBF5F]/10 p-1 rounded-full">
                     <FiCheck className="text-[#9BBF5F] text-sm" />
                   </div>
-                  <span className="text-gray-300">1 razón social</span>
+                  <span className="text-gray-300">2 razones social</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="bg-[#9BBF5F]/10 p-1 rounded-full">
