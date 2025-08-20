@@ -164,13 +164,13 @@ const Header = () => {
                     Plataforma de rastreo
                   </button>
                   <button 
-                    onClick={() => redirectToExternalPage('https://ananta.com.mx')}
+                    onClick={() => redirectToExternalPage('https://www.ananta.com.mx')}
                     className="block w-full text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-300"
                   >
                     Ananta
                   </button>
                   <button 
-                    onClick={() => redirectToExternalPage('https://varuna.com.mx')}
+                    onClick={() => redirectToExternalPage('https://www.varuna.com.mx')}
                     className="block w-full text-left px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-300"
                   >
                     Varuna
@@ -289,7 +289,7 @@ const Header = () => {
                     Plataforma de rastreo
                   </button>
                   <button 
-                    onClick={() => redirectToExternalPage('https://wwww.ananta.com.mx')}
+                    onClick={() => redirectToExternalPage('https://www.ananta.com.mx')}
                     className="block w-full text-left text-gray-400 hover:text-white transition-colors duration-300 py-1"
                   >
                     Ananta
