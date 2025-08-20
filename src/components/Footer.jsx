@@ -57,6 +57,11 @@ const Footer = () => {
 
           {/* Contacto y Links */}
           <div>
+                        <h3 className="text-xl font-bold mb-6 text-white">Links</h3>
+            <ul className="space-y-3 mb-8">
+              <li><Link to={'/politicas'} className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Política de privacidad</Link></li>
+              <li><Link to={'/terminos'} className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Términos y condiciones</Link></li>
+            </ul>
             <h3 className="text-xl font-bold mb-6 text-white">Contáctanos</h3>
             <ul className="space-y-3">
               <li className="flex items-center text-gray-400">

@@ -11,6 +11,8 @@ import ContactoPage from "./pages/ContactoPage";
 import PymesPage from "./pages/PymesPage";
 import CompraPage from "./pages/CompraPage";
 import LandingPymes from "./pages/LandingPymes";
+import PoliticasPage from "./pages/PoliticasPage";
+import TerminosPage from "./pages/TerminosPage";
 
 function TrackPageViews() {
   const location = useLocation();
@@ -41,6 +43,8 @@ function App() {
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/erp-empresarial" element={<PymesPage />} />
         <Route path="/soluciones-pymes" element={<LandingPymes />} />
+        <Route path="/politicas" element={<PoliticasPage />} />
+        <Route path="/terminos" element={<TerminosPage />} />
         <Route path="/compra/:id" element={<CompraPage />} />
       </Routes>
     </Router>
