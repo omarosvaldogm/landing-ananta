@@ -104,10 +104,10 @@ const PymesHero = () => {
                 <div>
                   <div className="text-sm text-gray-400 mb-1">Implementación</div>
                   <div className="flex items-center">
-                    <span className="text-gray-400 line-through mr-2 text-sm">$12,000</span>
-                    <span className="text-2xl font-bold text-[#9BBF5F]">$8,400</span>
+                    <span className="text-gray-400 line-through mr-2 text-sm">$18,500</span>
+                    <span className="text-2xl font-bold text-[#9BBF5F]">$9,250</span>
                   </div>
-                  <div className="text-xs text-[#9BBF5F] font-medium mt-1">30% de descuento</div>
+                  <div className="text-xs text-[#9BBF5F] font-medium mt-1">50% de descuento</div>
                 </div>
                 
                 <div>
