@@ -114,7 +114,7 @@ const ToolsSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <img
-              src="/img/LOGOANANTA.png"
+              src="/img/LOGOANANTA.webp"
               alt="Logo Ananta"
               className="w-[60%] opacity-10 md:opacity-40"
               loading="lazy"
