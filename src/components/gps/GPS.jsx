@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import AliadosTicker from '../inicio/AliadosTicker';
-
+import { Link } from 'react-router-dom';
 
 const GPS = () => {
   // Animaciones
@@ -54,13 +54,14 @@ const GPS = () => {
 
 Nuestros equipos GPS transmiten datos directamente a la plataforma de rastreo, facilitando la visualización de recorridos.
               </p>
-              
+              <Link to={'/contacto'}>
               <button className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-4 px-10 rounded-full hover:shadow-lg hover:shadow-[#9BBF5F]/40 transition-all duration-300 transform hover:scale-[1.02] group">
                 Más información
                 <svg className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
+              </Link>
             </div>
 
             {/* Columna derecha - Logo (reemplaza con tu imagen real) */}

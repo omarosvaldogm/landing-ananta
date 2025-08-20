@@ -34,7 +34,7 @@ function PymesPage() {
 
   return (
     <div className='bg-[#0a0a0a] min-h-screen flex flex-col'>
-      <Header />
+      
       <main className='flex-grow'>
         <PricingPlan />
         <SimpleProcess />

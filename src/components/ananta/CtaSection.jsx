@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CtaSection = () => {
   return (
@@ -22,13 +23,14 @@ const CtaSection = () => {
               <p className="text-xl text-gray-300 mb-8">
                 Es un software para centralizar las operaciones de tu empresa en un sólo lugar. Con herramientas avanzadas para gestión de inventarios, control de activos, facturación, mantenimiento y más, Ananta optimiza procesos, reduce costos y mejora la eficiencia operativa, adaptándose a las necesidades de cualquier industria.
               </p>
-              
-              <button className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-4 px-10 rounded-full hover:shadow-lg hover:shadow-[#9BBF5F]/40 transition-all duration-300 transform hover:scale-[1.02] group">
-                Solicita una presentación ahora
-                <svg className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
+              <Link to={'/contacto'}>
+                <button className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-4 px-10 rounded-full hover:shadow-lg hover:shadow-[#9BBF5F]/40 transition-all duration-300 transform hover:scale-[1.02] group">
+                  Solicita una presentación ahora
+                  <svg className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </Link>
             </div>
 
             {/* Columna derecha - Logo (reemplaza con tu imagen real) */}

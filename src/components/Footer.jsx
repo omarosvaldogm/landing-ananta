@@ -49,21 +49,14 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-white">Productos</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Ananta</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Dashcam IA</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#9BBF5F] transition-colors">GPS</a></li>
+              <li><Link to={'/ananta'} className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Ananta</Link></li>
+              <li><Link to={'/dashcam'} className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Dashcam IA</Link></li>
+              <li><Link to={'/gps'} className="text-gray-400 hover:text-[#9BBF5F] transition-colors">GPS</Link></li>
             </ul>
           </div>
 
           {/* Contacto y Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-white">Links</h3>
-            <ul className="space-y-3 mb-8">
-              <li><a href="#" className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Política de privacidad</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Políticas de integración comercial</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-[#9BBF5F] transition-colors">Términos y condiciones</a></li>
-            </ul>
-
             <h3 className="text-xl font-bold mb-6 text-white">Contáctanos</h3>
             <ul className="space-y-3">
               <li className="flex items-center text-gray-400">

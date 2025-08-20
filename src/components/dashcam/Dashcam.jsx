@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import AliadosTicker from '../inicio/AliadosTicker';
-
+import { Link } from 'react-router-dom';
 
 const Dashcam = () => {
   // Animaciones
@@ -155,9 +155,11 @@ const Dashcam = () => {
             <p className="text-gray-300 mb-8 text-lg">
               Mantente siempre alerta con las alarmas inteligentes. Que tus viajes transcurran de forma segura con nuestras Dashcams con IA.
             </p>
+            <Link to={'/contacto'}>
             <button className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[#9BBF5F]/30 transition-all duration-300">
               Solicitar información
             </button>
+            </Link>
           </motion.div>
         </motion.div>
 

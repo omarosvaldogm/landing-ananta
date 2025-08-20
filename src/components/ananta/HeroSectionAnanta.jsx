@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import DarkVeil from '../DarkVeil';
 import CountUp from 'react-countup';
+import { Link } from 'react-router-dom';
 
 const HeroSectionAnanta = () => {
   // Animaciones existentes
@@ -77,13 +78,15 @@ const HeroSectionAnanta = () => {
             className="flex justify-center"
             variants={itemVariants}
           >
-            <motion.button 
-              className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[#f72585]/30 transition-all duration-300 transform hover:scale-[1.02]"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Contrata Ahora
-            </motion.button>
+            <Link to={'/contacto'}>
+              <motion.button 
+                className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[#4A6D1A]/30 transition-all duration-300 transform hover:scale-[1.02]"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Contrata Ahora
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
 

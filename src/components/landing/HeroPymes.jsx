@@ -103,7 +103,7 @@ const HeroSectionPyme = () => {
         transition={{ delay: 0.5, type: 'spring' }}
       >
         <div className="bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A] text-white px-4 py-2 rounded-full shadow-lg flex items-center">
-          <span className="font-bold mr-2">¡OFERTA EXCLUSIVA!</span>
+          <span className="font-bold mr-2 text-xl">¡Oferta exclusiva para contratación en línea!</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
@@ -139,14 +139,6 @@ const HeroSectionPyme = () => {
           className="w-full lg:w-1/2 mb-12 lg:mb-0 lg:pr-12"
           variants={containerVariants}
         >
-          <motion.div 
-            className="inline-block mb-4"
-            variants={itemVariants}
-          >
-            <div className="bg-[#1a1a1a] border border-[#73963C] text-[#9BBF5F] px-3 py-1 rounded-full text-sm font-medium">
-              ¡Solo para usuarios seleccionados!
-            </div>
-          </motion.div>
           
           <motion.h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"

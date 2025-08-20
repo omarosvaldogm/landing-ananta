@@ -103,10 +103,10 @@ const Header = () => {
               Ananta
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <Link to={'/soluciones-pymes'} className="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+            {/* <Link to={'/soluciones-pymes'} className="text-gray-300 hover:text-white transition-colors duration-300 relative group">
               Pymes
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            </Link> */}
             <Link to={'/contacto'} className="text-gray-300 hover:text-white transition-colors duration-300 relative group">
               Contacto
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] transition-all duration-300 group-hover:w-full"></span>
@@ -193,13 +193,13 @@ const Header = () => {
             >
               Ananta
             </Link>
-            <Link 
+            {/* <Link 
               to={'/soluciones-pymes'} 
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2 border-b border-white/10"
               onClick={() => setIsMenuOpen(false)}
             >
               Pymes
-            </Link>
+            </Link> */}
             <Link 
               to={'/contacto'} 
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2 border-b border-white/10"

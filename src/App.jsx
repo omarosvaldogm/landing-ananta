@@ -39,7 +39,7 @@ function App() {
         <Route path="/dashcam" element={<DashCamPage />} />
         <Route path="/gps" element={<GPSPage />} />
         <Route path="/contacto" element={<ContactoPage />} />
-        <Route path="/pymes" element={<PymesPage />} />
+        <Route path="/erp-empresarial" element={<PymesPage />} />
         <Route path="/soluciones-pymes" element={<LandingPymes />} />
         <Route path="/compra/:id" element={<CompraPage />} />
       </Routes>

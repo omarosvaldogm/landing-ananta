@@ -10,40 +10,44 @@ const SolucionesSection = () => {
       nombre: "Ananta ERP",
       descripcion: "Software ERP y Plataforma madre",
       imagen: "/img/cap/anantacap.png",
-      destacado: true
+      destacado: true,
+      link: "/ananta" // URL añadida
     },
     {
       nombre: "Varuna",
       descripcion: "Tu herramienta de monitoreo inteligente",
       imagen: "/img/cap/varunacap.png",
-      destacado: false
+      destacado: false,
+      link: "#" // URL añadida
     },
     {
       nombre: "Dashcam",
       descripcion: "Seguridad con IA integrada",
       imagen: "/img/cap/DASHCAMS.png",
-      destacado: true
+      destacado: true,
+      link: "/dashcam" // URL añadida
     },
     {
       nombre: "Equipos GPS",
       descripcion: "Equipos de alta gama",
       imagen: "/img/cap/EQUIPOS.png",
-      destacado: false
+      destacado: false,
+      link: "/gps" // URL añadida
     },
-    ,
     {
       nombre: "Plataforma Robusta",
       descripcion: "Plataforma de Rastreo",
       imagen: "/img/cap/RASTREO.png",
-      destacado: true
+      destacado: true,
+      link: "#" // URL añadida
     },
     {
       nombre: "Monitoreo Activo",
       descripcion: "Asistencia 24/7",
       imagen: "/img/cap/CAMIONES.png",
-      destacado: false
+      destacado: false,
+      link: "#" // URL añadida
     }
-    
   ];
 
   // Animaciones
@@ -142,69 +146,40 @@ const SolucionesSection = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              {/* Fondo con imagen */}
-              <div className="absolute inset-0">
-                <img 
-                  src={producto.imagen} 
-                  alt={producto.nombre}
-                  className="w-full h-full object-cover  group-hover:opacity-40 transition-opacity duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/60 to-[#0a0a0a]/90"></div>
-              </div>
-              
-              {/* Efecto de gradiente */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#326a10] to-secondary rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500"></div>
-              
-              {/* Contenido */}
-              <div className="relative h-full p-6 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">{producto.nombre}</h3>
-                  <p className="text-gray-300">{producto.descripcion}</p>
+              {/* Envolver el contenido en un enlace */}
+              <a href={producto.link} className="block h-full w-full">
+                {/* Fondo con imagen */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={producto.imagen} 
+                    alt={producto.nombre}
+                    className="w-full h-full object-cover group-hover:opacity-40 transition-opacity duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/60 to-[#0a0a0a]/90"></div>
                 </div>
-              </div>
-              
-              {/* Efecto de borde */}
-              <div className="absolute inset-0 rounded-xl pointer-events-none border border-transparent group-hover:border-[#9BBF5F]/50 transition-all duration-500"></div>
-              
-              {/* Efecto de brillo al pasar el mouse */}
-              <div className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#9BBF5F] rounded-full filter blur-[60px] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-              </div>
+                
+                {/* Efecto de gradiente */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#326a10] to-secondary rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500"></div>
+                
+                {/* Contenido */}
+                <div className="relative h-full p-6 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">{producto.nombre}</h3>
+                    <p className="text-gray-300">{producto.descripcion}</p>
+                  </div>
+                </div>
+                
+                {/* Efecto de borde */}
+                <div className="absolute inset-0 rounded-xl pointer-events-none border border-transparent group-hover:border-[#9BBF5F]/50 transition-all duration-500"></div>
+                
+                {/* Efecto de brillo al pasar el mouse */}
+                <div className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#9BBF5F] rounded-full filter blur-[60px] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                </div>
+              </a>
             </motion.div>
           ))}
         </div>
-        
-        {/* Botón ver más */}
-        {/* <motion.div 
-          className="text-center mt-16"
-          variants={fadeInVariants}
-        >
-          <motion.button 
-            className="border border-[#326a10] text-[#9BBF5F] font-bold py-3 px-8 rounded-full hover:bg-[#326a10]/20 transition-all duration-300 flex items-center mx-auto"
-            whileHover={{ 
-              scale: 1.02,
-              boxShadow: "0 5px 15px rgba(50, 106, 16, 0.3)"
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Ver todas las soluciones
-            <motion.svg 
-              className="w-5 h-5 ml-2" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
-              xmlns="http://www.w3.org/2000/svg"
-              animate={isInView ? { y: [0, 5, 0] } : { y: 0 }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 2,
-                ease: "easeInOut"
-              }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </motion.svg>
-          </motion.button>
-        </motion.div> */}
       </motion.div>
     </div>
   );

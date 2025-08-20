@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom'; // Importar Link de React Router
 
 const PricingPlansToggle = () => {
   const ref = useRef(null);
@@ -99,13 +100,12 @@ const PricingPlansToggle = () => {
     }
   ];
 
-    const addons = [
+  const addons = [
     { name: "Usuario extra", price: "$290/mes" },
     { name: "Facturación ilimitada", price: "$1,160/mes" },
     { name: "Razón social extra", price: "$580/mes" },
     { name: "Razones sociales ilimitadas", price: "$1,200/mes" }
   ];
-
 
   const currentPlans = showImplementation ? implementationPlans : licensePlans;
 
@@ -245,30 +245,40 @@ const PricingPlansToggle = () => {
                     ))}
                   </ul>
                   
-                  <button className={`w-full py-3 px-6 rounded-lg font-bold transition-all duration-300 ${plan.highlight ? 'bg-gradient-to-r from-[#9BBF5F] to-[#73963C] text-[#0a0a0a] hover:shadow-lg hover:shadow-[#73963C]/50' : 'bg-[#1a1a1a] border border-[#2a2a2a] text-white hover:border-[#9BBF5F]'}`}>
+                  {/* Botón que lleva al formulario de contacto */}
+                  <Link 
+                    to="/contacto" 
+                    className={`w-full py-3 px-6 rounded-lg font-bold transition-all duration-300 text-center ${plan.highlight ? 'bg-gradient-to-r from-[#9BBF5F] to-[#73963C] text-[#0a0a0a] hover:shadow-lg hover:shadow-[#73963C]/50' : 'bg-[#1a1a1a] border border-[#2a2a2a] text-white hover:border-[#9BBF5F]'}`}
+                  >
                     {showImplementation ? "Solicita cotización de implementación" : "Contratar ahora"}
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
           </motion.div>
-          <motion.div 
-          className="bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-8"
-          variants={itemVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <h3 className="text-2xl font-bold mb-6 text-white">MEJORA TU PLAN</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {addons.map((addon, index) => (
-              <div key={index} className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-4 hover:border-[#9BBF5F]/30 transition-colors duration-300">
-                <h4 className="text-white font-medium mb-1">{addon.name}</h4>
-                <p className="text-[#9BBF5F] font-bold">{addon.price}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+          {/* Sección de Add-ons */}
+          <motion.div 
+            className="bg-gradient-to-br from-[#121212] to-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-8"
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <h3 className="text-2xl font-bold mb-6 text-white">MEJORA TU PLAN</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {addons.map((addon, index) => (
+                <Link 
+                  key={index} 
+                  to="/contacto"
+                  className="block bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-4 hover:border-[#9BBF5F]/30 transition-colors duration-300"
+                >
+                  <h4 className="text-white font-medium mb-1">{addon.name}</h4>
+                  <p className="text-[#9BBF5F] font-bold">{addon.price}</p>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
         </AnimatePresence>
       </div>
     </div>
