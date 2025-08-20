@@ -151,7 +151,7 @@ const HeroSectionPyme = () => {
             className="text-xl md:text-2xl font-light mb-6 text-gray-300"
             variants={itemVariants}
           >
-            Sencillo, rápido y <span className="font-bold text-white">50% de descuento</span> exclusivo hoy.
+            Sencillo, rápido y <span className="font-bold text-white">50% de descuento en implementación</span> exclusivo hoy.
           </motion.p>
           
           <motion.ul 
@@ -220,7 +220,7 @@ const HeroSectionPyme = () => {
           >
             <div className="bg-[#9BBF5F] text-[#0a0a0a] font-extrabold px-6 py-3 rounded-full shadow-xl transform rotate-[-15deg]">
               <div className="text-3xl">50% OFF</div>
-              <div className="text-xs uppercase">Solo hoy</div>
+              <div className="text-xs uppercase">En implementación</div>
             </div>
           </motion.div>
           
