@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheck, FiZap, FiChevronRight } from 'react-icons/fi';
 
-const PymesHero = () => {
+const PymesHero = ({onDiscountClick}) => {
   // Animaciones
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -179,6 +179,7 @@ const PymesHero = () => {
                 className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#9BBF5F] to-[#73963C] text-white font-bold py-4 px-6 rounded-lg hover:shadow-lg hover:shadow-[#9BBF5F]/30 transition-all duration-300 group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={onDiscountClick} // Agregar el onClick aquí
               >
                 <span>Contratar con descuento</span>
                 <FiChevronRight className="transition-transform duration-300 group-hover:translate-x-1" />

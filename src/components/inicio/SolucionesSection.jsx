@@ -11,7 +11,7 @@ const SolucionesSection = () => {
       descripcion: "Software ERP y Plataforma madre",
       imagen: "/img/cap/anantacap.png",
       destacado: true,
-      link: "/ananta" // URL añadida
+      link: "/plataforma-ananta" // URL añadida
     },
     {
       nombre: "Varuna",

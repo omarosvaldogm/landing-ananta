@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import DarkVeil from '../DarkVeil';
 
-const HeroSectionPyme = () => {
+const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
   const [timeLeft, setTimeLeft] = useState({
     hours: 2,
     minutes: 0,
@@ -183,24 +183,26 @@ const HeroSectionPyme = () => {
             variants={itemVariants}
           >
             <motion.button 
-              className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[#73963C]/50 transition-all duration-300 transform hover:scale-[1.02] text-lg relative overflow-hidden"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              variants={pulseVariants}
-              initial="initial"
-              animate="animate"
-            >
-              <span className="relative z-10">¡Quiero mi descuento!</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A] opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-            </motion.button>
+                    className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-3 px-8 rounded-full hover:shadow-lg hover:shadow-[#73963C]/50 transition-all duration-300 transform hover:scale-[1.02] text-lg relative overflow-hidden"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    variants={pulseVariants}
+                    initial="initial"
+                    animate="animate"
+                    onClick={onDiscountClick} // Agregar el onClick aquí
+                >
+                    <span className="relative z-10">¡Quiero mi descuento!</span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A] opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
+                </motion.button>
             
             <motion.button 
-              className="bg-transparent border-2 border-[#73963C] text-white font-bold py-3 px-8 rounded-full hover:bg-[#73963C]/20 transition-all duration-300 text-lg"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Ver detalles
-            </motion.button>
+                    className="bg-transparent border-2 border-[#73963C] text-white font-bold py-3 px-8 rounded-full hover:bg-[#73963C]/20 transition-all duration-300 text-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={onDetailsClick} // Agregar el onClick aquí
+                >
+                    Ver detalles
+                </motion.button>
           </motion.div>
         </motion.div>
 

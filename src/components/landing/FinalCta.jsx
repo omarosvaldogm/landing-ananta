@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-const FinalCta = () => {
+const FinalCta = ({ onDiscountClick }) => {
   // Referencia para detectar cuándo el componente está en pantalla
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" }); // Se activa cuando el 20% del componente está visible
@@ -108,6 +108,7 @@ const FinalCta = () => {
                 className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-semibold py-4 px-12 rounded-full text-lg md:text-xl relative group overflow-hidden"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(155, 191, 95, 0.4)" }}
                 whileTap={{ scale: 0.98 }}
+                onClick={onDiscountClick}
               >
                 <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span className="relative z-10 flex items-center justify-center">
