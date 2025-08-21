@@ -164,7 +164,7 @@ const handlePayPalSuccess = async (details) => {
       detalles_transaccion: details
     };
 
-    const transaccionResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/transacciones`, {
+    const transaccionResponse = await fetch(`${import.meta.env.VITE_API_URL}/transacciones`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -187,7 +187,7 @@ const handlePayPalSuccess = async (details) => {
   id_cliente: clienteData.id_cliente // Añadir esta línea
 };
 
-    const emailResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/contacto/enviar-confirmacion-compra`, {
+    const emailResponse = await fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-confirmacion-compra`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

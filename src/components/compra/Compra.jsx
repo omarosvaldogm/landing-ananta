@@ -11,7 +11,7 @@ const Compra = () => {
   useEffect(() => {
     const fetchCompraData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/clientes/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/clientes/${id}`);
         if (!response.ok) {
           throw new Error('No se pudo obtener la información de la compra');
         }
