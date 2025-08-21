@@ -198,6 +198,17 @@ const handlePayPalSuccess = async (details) => {
     if (!emailResponse.ok) {
       console.error('Error al enviar correo de confirmación:', await emailResponse.text());
     }
+    const emailAdminResponse = await fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-notificacion-compra-admin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(emailPayload),
+    });
+
+    if (!emailAdminResponse.ok) {
+      console.error('Error al enviar correo de confirmación:', await emailAdminResponse.text());
+    }
 
     // Resetear el formulario
     setFormData({
@@ -246,7 +257,7 @@ const handlePayPalSuccess = async (details) => {
       delete payload.terminos;
 
       // Enviar datos a la API
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/clientes`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/clientes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
