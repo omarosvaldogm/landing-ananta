@@ -205,7 +205,7 @@ const handlePayPalSuccess = async (details) => {
       telefono: formData.telefono,
       empresa: formData.empresa,
       modulos: selectedModules,
-      monto_pagado: 8400,
+      monto_pagado: 9250,
       paypal_id: details.id,
       id_cliente: clienteData.id_cliente,
       pais: formData.id_pais
