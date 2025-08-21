@@ -211,7 +211,7 @@ const handlePayPalSuccess = async (details) => {
       pais: formData.id_pais
     };
 
-    const adminNotificationResponse = await fetch(`${import.meta.env.VITE_API_URL}/compras/enviar-notificacion-compra-admin`, {
+    const adminNotificationResponse = await fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-notificacion-compra-admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
