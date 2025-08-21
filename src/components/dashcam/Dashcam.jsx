@@ -78,7 +78,7 @@ const Dashcam = () => {
                   playsInline
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
                 >
-                  <source src="https://sudsolutions.mx/wp-content/uploads/2024/12/Recorrido-2.mp4" type="video/mp4" />
+                  <source src="/video/GPS.mp4" type="video/mp4" />
                   Tu navegador no soporta el elemento de video.
                 </video>
                 
@@ -143,7 +143,7 @@ const Dashcam = () => {
             {/* Aquí va la imagen */}
             <div className="aspect-square bg-black/50 flex items-center justify-center">
               <div className="text-white text-center p-6">
-                <img src="img/cap/CAMIONES.png" alt="" />
+                <img src="img/cap/CAMIONES.webp" alt="" />
               </div>
             </div>
           </motion.div>

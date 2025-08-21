@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
-import DarkVeil from '../DarkVeil';
 import { Link } from 'react-router-dom';
 
 // Carga diferida de componentes pesados
@@ -84,8 +83,7 @@ const HeroSection = () => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-between overflow-hidden relative">
-      {/* DarkVeil como fondo */}
-      
+
 
       {/* Contenido principal */}
       <motion.div

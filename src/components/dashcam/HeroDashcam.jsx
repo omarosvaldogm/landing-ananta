@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import DarkVeil from '../DarkVeil';
 
 const HeroDashcam = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -45,10 +44,7 @@ const HeroDashcam = () => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-between overflow-hidden relative">
-      {/* DarkVeil como fondo */}
-      <div className="absolute inset-0 z-0">
-        <DarkVeil />
-      </div>
+      
       
       {/* Contenido principal */}
       <div className="container mx-auto px-6 flex-1 flex flex-col items-center justify-center relative z-10 py-16 md:py-24 w-full md:mt-24">

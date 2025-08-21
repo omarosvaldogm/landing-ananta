@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import DarkVeil from '../DarkVeil';
 
 const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -90,10 +89,6 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-center overflow-hidden relative">
-      {/* Fondo */}
-      <div className="absolute inset-0 z-0">
-        <DarkVeil />
-      </div>
       
       {/* Badge de promoción exclusiva */}
       <motion.div

@@ -116,7 +116,7 @@ const ToolsSection = () => {
             <img
               src="/img/LOGOANANTA.webp"
               alt="Logo Ananta"
-              className="w-[60%] opacity-10 md:opacity-40"
+              className="w-[60%] opacity-80"
               loading="lazy"
             />
           </m.div>

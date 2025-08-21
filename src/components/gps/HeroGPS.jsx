@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import DarkVeil from '../DarkVeil';
 import CountUp from 'react-countup';
 
 const HeroGPS = () => {
@@ -42,10 +41,6 @@ const HeroGPS = () => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-between overflow-hidden relative">
-      {/* DarkVeil como fondo */}
-      <div className="absolute inset-0 z-0">
-        <DarkVeil />
-      </div>
       
       {/* Contenido principal - Ahora centrado y ocupando todo el ancho */}
       <motion.div 
@@ -103,7 +98,7 @@ const HeroGPS = () => {
                   playsInline
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
                 >
-                  <source src="https://sudsolutions.mx/wp-content/uploads/2024/12/Recorrido-1.mp4" type="video/mp4" />
+                  <source src="/video/GPS.mp4" type="video/mp4" />
                   Tu navegador no soporta el elemento de video.
                 </video>
               </div>

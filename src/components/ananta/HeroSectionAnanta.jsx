@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import DarkVeil from '../DarkVeil';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
 
@@ -43,11 +42,7 @@ const HeroSectionAnanta = () => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-between overflow-hidden relative">
-      {/* DarkVeil como fondo */}
-      <div className="absolute inset-0 z-0">
-        <DarkVeil />
-      </div>
-      
+
       {/* Contenido principal - Ahora centrado y ocupando todo el ancho */}
       <motion.div 
         className="container mx-auto px-6 flex-1 flex flex-col items-center justify-center relative z-10 py-16 md:py-24 w-full mt-24"
