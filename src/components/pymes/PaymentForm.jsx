@@ -323,7 +323,7 @@ const handlePayPalSuccess = async (details) => {
               <p className="font-bold">¡Información enviada con éxito!</p>
               <p className="text-sm">
                 {paymentCompleted 
-                  ? 'Hemos recibido tu pago de $8,400 MXN y nos pondremos en contacto contigo pronto.' 
+                  ? 'Hemos recibido tu pago de $9,250 MXN y nos pondremos en contacto contigo pronto.' 
                   : 'Hemos recibido tu información y nos pondremos en contacto contigo pronto.'}
               </p>
             </div>
