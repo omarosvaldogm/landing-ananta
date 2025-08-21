@@ -8,24 +8,25 @@ const Compra = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchCompraData = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/clientes/${id}`);
-        if (!response.ok) {
-          throw new Error('No se pudo obtener la información de la compra');
-        }
-        const data = await response.json();
-        setCompraData(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+useEffect(() => {
+  const fetchCompraData = async () => {
+    try {
+      // Cambia esta línea para buscar por PayPal ID en lugar de ID de cliente
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/clientes/paypal/${id}`);
+      if (!response.ok) {
+        throw new Error('No se pudo obtener la información de la compra');
       }
-    };
+      const data = await response.json();
+      setCompraData(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchCompraData();
-  }, [id]);
+  fetchCompraData();
+}, [id]);
 
   if (loading) {
     return (
