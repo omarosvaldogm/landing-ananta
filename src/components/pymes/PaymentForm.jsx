@@ -132,7 +132,7 @@ const handlePayPalSuccess = async (details) => {
       estado_contacto: 2,
       paypal_id: details.id,
       paypal_status: details.status,
-      monto_pagado: 8400
+      monto_pagado: 9250
     };
 
     delete payload.terminos;
@@ -155,9 +155,9 @@ const handlePayPalSuccess = async (details) => {
     // 2. Registrar la transacción en la base de datos
     const transaccionData = {
       paypal_id: details.id,
-      id_cliente: clienteData.id_cliente, // Asume que la respuesta incluye el ID del cliente
+      id_cliente: clienteData.id_cliente,
       estado: details.status,
-      monto: 8400,
+      monto: 9250,
       moneda: 'MXN',
       correo_pagador: details.payer.email_address,
       nombre_pagador: details.payer.name.given_name + ' ' + details.payer.name.surname,
@@ -174,18 +174,17 @@ const handlePayPalSuccess = async (details) => {
 
     if (!transaccionResponse.ok) {
       console.error('Error al registrar transacción:', await transaccionResponse.text());
-      // No lanzamos error aquí porque el pago ya se completó
     }
 
-    // 3. Enviar correo de confirmación
+    // 3. Enviar correo de confirmación al cliente
     const emailPayload = {
-  nombre: formData.nombre,
-  correo: formData.correo,
-  modulos: selectedModules,
-  monto_pagado: 8400,
-  paypal_id: details.id,
-  id_cliente: clienteData.id_cliente // Añadir esta línea
-};
+      nombre: formData.nombre,
+      correo: formData.correo,
+      modulos: selectedModules,
+      monto_pagado: 9250,
+      paypal_id: details.id,
+      id_cliente: clienteData.id_cliente
+    };
 
     const emailResponse = await fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-confirmacion-compra`, {
       method: 'POST',
@@ -198,16 +197,30 @@ const handlePayPalSuccess = async (details) => {
     if (!emailResponse.ok) {
       console.error('Error al enviar correo de confirmación:', await emailResponse.text());
     }
-    const emailAdminResponse = await fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-notificacion-compra-admin`, {
+
+    // 4. ENVIAR NOTIFICACIÓN A ADMINISTRACIÓN - NUEVA FUNCIONALIDAD
+    const adminNotificationPayload = {
+      nombre: formData.nombre,
+      correo: formData.correo,
+      telefono: formData.telefono,
+      empresa: formData.empresa,
+      modulos: selectedModules,
+      monto_pagado: 8400,
+      paypal_id: details.id,
+      id_cliente: clienteData.id_cliente,
+      pais: formData.id_pais
+    };
+
+    const adminNotificationResponse = await fetch(`${import.meta.env.VITE_API_URL}/compras/enviar-notificacion-compra-admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(emailPayload),
+      body: JSON.stringify(adminNotificationPayload),
     });
 
-    if (!emailAdminResponse.ok) {
-      console.error('Error al enviar correo de confirmación:', await emailAdminResponse.text());
+    if (!adminNotificationResponse.ok) {
+      console.error('Error al enviar notificación a administración:', await adminNotificationResponse.text());
     }
 
     // Resetear el formulario
