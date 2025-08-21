@@ -85,9 +85,7 @@ const HeroSection = () => {
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-between overflow-hidden relative">
       {/* DarkVeil como fondo */}
-      <div className="absolute inset-0 z-0">
-        <DarkVeil />
-      </div>
+      
 
       {/* Contenido principal */}
       <motion.div
