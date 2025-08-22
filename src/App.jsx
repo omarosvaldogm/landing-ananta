@@ -51,7 +51,7 @@ function App() {
         <Route path="/politicas" element={<PoliticasPage />} />
         <Route path="/terminos" element={<TerminosPage />} />
         <Route path="/compra/:id" element={<CompraPage />} />
-        <Route path="/contacto/:id" element={<InformacionContactoPage />} />
+        <Route path="/gracias/:id" element={<InformacionContactoPage />} />
       </Routes>
     </Router>
   );

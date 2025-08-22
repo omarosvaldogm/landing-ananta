@@ -11,7 +11,7 @@ const ConfirmacionContacto = () => {
   useEffect(() => {
     const fetchContactoData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/clientes/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/clientes/uuid/${id}`);
         if (!response.ok) {
           throw new Error('No se pudo obtener la información del contacto');
         }
@@ -147,29 +147,21 @@ const ConfirmacionContacto = () => {
                 ¿Qué sigue?
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-300">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
                 <div className="text-center p-4 bg-[#1e1e1e] rounded-lg border border-[#2a2a2a]">
                   <div className="w-12 h-12 mx-auto bg-[#326a10] rounded-full flex items-center justify-center mb-3">
                     <span className="text-white font-bold">1</span>
                   </div>
                   <h3 className="font-semibold mb-2">Revisión de tu solicitud</h3>
-                  <p className="text-sm">Nuestro equipo revisará tu mensaje y requisitos.</p>
+                  <p className="text-sm">Hemos recibido tu información y nos pondremos en contacto contigo a la brevedad.</p>
                 </div>
                 
                 <div className="text-center p-4 bg-[#1e1e1e] rounded-lg border border-[#2a2a2a]">
                   <div className="w-12 h-12 mx-auto bg-[#326a10] rounded-full flex items-center justify-center mb-3">
                     <span className="text-white font-bold">2</span>
                   </div>
-                  <h3 className="font-semibold mb-2">Contacto personalizado</h3>
-                  <p className="text-sm">Te contactaremos en un plazo máximo de 24 horas hábiles.</p>
-                </div>
-                
-                <div className="text-center p-4 bg-[#1e1e1e] rounded-lg border border-[#2a2a2a]">
-                  <div className="w-12 h-12 mx-auto bg-[#326a10] rounded-full flex items-center justify-center mb-3">
-                    <span className="text-white font-bold">3</span>
-                  </div>
-                  <h3 className="font-semibold mb-2">Solución a tu medida</h3>
-                  <p className="text-sm">Te brindaremos la mejor solución para tus necesidades.</p>
+                  <h3 className="font-semibold mb-2">Contacto</h3>
+                  <p className="text-sm">Nuestro equipo revisará tu mensaje lo antes posible.</p>
                 </div>
               </div>
             </div>

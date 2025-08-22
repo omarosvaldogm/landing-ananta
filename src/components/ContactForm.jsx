@@ -69,8 +69,8 @@ const ContactForm = () => {
       }
 
       // Obtener el ID del cliente recién creado para la redirección
-      const clienteData = await dbResponse.json();
-      const clienteId = clienteData.id_cliente; // Asegúrate de que tu API devuelva el ID
+      const responseData = await dbResponse.json();
+      const uuid = responseData.uuid; // Obtener el UUID de la respuesta
 
       // 2. Enviar correos en paralelo
       const [emailResponse, adminEmailResponse] = await Promise.all([
@@ -108,7 +108,7 @@ const ContactForm = () => {
       }
 
       // Redirigir a la página de confirmación con el ID del cliente
-      navigate(`/contacto/${clienteId}`);
+      navigate(`/gracias/${uuid}`);
 
     } catch (error) {
       console.error('Error:', error);
