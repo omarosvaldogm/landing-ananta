@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,6 +16,7 @@ const ContactForm = () => {
   });
 
   const [mensajeLength, setMensajeLength] = useState(0);
+  const navigate = useNavigate(); // Hook para navegación
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,6 +68,10 @@ const ContactForm = () => {
         throw new Error(errorData.message || 'Error al guardar en la base de datos');
       }
 
+      // Obtener el ID del cliente recién creado para la redirección
+      const clienteData = await dbResponse.json();
+      const clienteId = clienteData.id_cliente; // Asegúrate de que tu API devuelva el ID
+
       // 2. Enviar correos en paralelo
       const [emailResponse, adminEmailResponse] = await Promise.all([
         fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-confirmacion`, {
@@ -101,26 +107,8 @@ const ContactForm = () => {
         throw new Error('Error al enviar los correos de confirmación');
       }
 
-      // Resetear el formulario
-      setFormData({
-        nombre: '',
-        telefono: '',
-        correo: '',
-        pais: '',
-        producto: '',
-        empresa: '',
-        mensaje: ''
-      });
-      setMensajeLength(0);
-
-      // Mostrar mensaje de éxito
-      setSubmitError(null);
-      setShowSuccess(true);
-      
-      // Ocultar el mensaje después de 5 segundos
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
+      // Redirigir a la página de confirmación con el ID del cliente
+      navigate(`/contacto/${clienteId}`);
 
     } catch (error) {
       console.error('Error:', error);
