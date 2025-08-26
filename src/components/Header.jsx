@@ -128,7 +128,7 @@ const Header = () => {
               )}
             </div>
             
-            <Link to={'/plataforma-ananta'} className="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+            <Link to={'/ananta'} className="text-gray-300 hover:text-white transition-colors duration-300 relative group">
               Ananta
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] transition-all duration-300 group-hover:w-full"></span>
             </Link>
@@ -247,7 +247,7 @@ const Header = () => {
               </div>
             </div>
             <Link 
-              to={'/plataforma-ananta'} 
+              to={'/ananta'} 
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2 border-b border-white/10"
               onClick={() => setIsMenuOpen(false)}
             >
