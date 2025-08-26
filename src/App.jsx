@@ -37,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<InicioPage />} />
         <Route path="/funcionalidades" element={<FuncionalidadesPage />} />
+        <Route path="/ananta" element={<AnantaPage />} />
         <Route path="/plataforma-ananta" element={<AnantaPage />} />
         <Route path="/nosotros" element={<NosotrosPage />} />
         <Route path="/dashcam" element={<DashCamPage />} />
