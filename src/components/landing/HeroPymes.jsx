@@ -98,7 +98,7 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
         transition={{ delay: 0.5, type: 'spring' }}
       >
         <div className="bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A] text-white px-4 py-2 rounded-full shadow-lg flex items-center">
-          <span className="font-bold mr-2 text-xl">¡Oferta exclusiva para contratación en línea!</span>
+          <span className="font-bold mr-2 text-lg md:text-xl">¡Oferta exclusiva para contratación en línea!</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
@@ -131,12 +131,12 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
       >
         {/* Texto a la izquierda */}
         <motion.div 
-          className="w-full lg:w-1/2 mb-12 lg:mb-0 lg:pr-12"
+          className="w-full lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 mt-24 md:mt-0"
           variants={containerVariants}
         >
           
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white "
             variants={itemVariants}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A]">Oferta Especial:</span> Gestiona tu PYME
