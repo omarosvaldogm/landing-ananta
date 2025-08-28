@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Analytics } from "@vercel/analytics/react"
 import TagManager from 'react-gtm-module'; // Importa la librería
 import './index.css';
 import App from './App.jsx';
