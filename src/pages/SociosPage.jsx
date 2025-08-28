@@ -7,7 +7,7 @@ import FeaturesSection from '../components/inicio/FeaturesSection';
 import CtaSection from '../components/ananta/CtaSection';
 import FuncionalidadesSection from '../components/inicio/FuncionalidadesSection';
 import InfoSection from '../components/ananta/InfoSection';
-import ContactForm from '../components/ContactForm';
+import ContactSociosForm from '../components/ContactSociosForm';
 import PricingPlans from '../components/ananta/PricingPlans';
 
 function SociosPage() {
@@ -34,7 +34,7 @@ function SociosPage() {
         <CtaSection />
         <FuncionalidadesSection />
         <InfoSection />
-        <ContactForm />
+        <ContactSociosForm />
       </main>
       <Footer />
     </div>
