@@ -10,7 +10,7 @@ const ContactSociosForm = () => {
     telefono: '',
     correo: '',
     pais: '', 
-    producto: '4', // Valor por defecto para Socios
+    producto: '5', // Valor por defecto para Socios
     empresa: '',
     mensaje: ''
   });
