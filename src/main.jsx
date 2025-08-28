@@ -16,5 +16,6 @@ TagManager.initialize(tagManagerArgs); // Inicializa GTM
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
+    <Analytics />
   </StrictMode>,
 );
