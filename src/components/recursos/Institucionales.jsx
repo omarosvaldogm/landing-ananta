@@ -39,7 +39,7 @@ const Institucionales = () => {
     const fetchVideos = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:3000/api/videos/categoria/2');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/videos/categoria/2`);
         
         if (!response.ok) {
           throw new Error(`Error HTTP: ${response.status}`);
