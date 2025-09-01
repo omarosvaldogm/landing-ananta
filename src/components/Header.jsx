@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsHovered, setIsProductsHovered] = useState(false);
+  const [isResourcesHovered, setIsResourcesHovered] = useState(false);
   const [isLoginHovered, setIsLoginHovered] = useState(false);
   const [submenuTimeout, setSubmenuTimeout] = useState(null);
+  const [resourcesSubmenuTimeout, setResourcesSubmenuTimeout] = useState(null);
   const [loginSubmenuTimeout, setLoginSubmenuTimeout] = useState(null);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
   const [isMobileLoginOpen, setIsMobileLoginOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -44,6 +47,21 @@ const Header = () => {
     setSubmenuTimeout(timeout);
   };
 
+  const handleMouseEnterResources = () => {
+    if (resourcesSubmenuTimeout) {
+      clearTimeout(resourcesSubmenuTimeout);
+      setResourcesSubmenuTimeout(null);
+    }
+    setIsResourcesHovered(true);
+  };
+
+  const handleMouseLeaveResources = () => {
+    const timeout = setTimeout(() => {
+      setIsResourcesHovered(false);
+    }, 300);
+    setResourcesSubmenuTimeout(timeout);
+  };
+
   const handleMouseEnterLogin = () => {
     if (loginSubmenuTimeout) {
       clearTimeout(loginSubmenuTimeout);
@@ -61,6 +79,10 @@ const Header = () => {
 
   const toggleMobileProducts = () => {
     setIsMobileProductsOpen(!isMobileProductsOpen);
+  };
+
+  const toggleMobileResources = () => {
+    setIsMobileResourcesOpen(!isMobileResourcesOpen);
   };
 
   const toggleMobileLogin = () => {
@@ -123,6 +145,40 @@ const Header = () => {
                     className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-300"
                   >
                     GPS
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Menú desplegable de Recursos */}
+            <div 
+              className="relative"
+              onMouseEnter={handleMouseEnterResources}
+              onMouseLeave={handleMouseLeaveResources}
+            >
+              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 relative group">
+                Recursos
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              
+              {/* Submenú desplegable */}
+              {isResourcesHovered && (
+                <div 
+                  className="absolute left-0 mt-2 w-56 bg-black/80 backdrop-blur-md rounded-lg shadow-lg py-2 z-50 animate-fadeIn"
+                  onMouseEnter={handleMouseEnterResources}
+                  onMouseLeave={handleMouseLeaveResources}
+                >
+                  <Link 
+                    to={'/guias-practicas'}
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-300"
+                  >
+                    Guías prácticas
+                  </Link>
+                  <Link 
+                    to={'/videos-institucionales'} 
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-300"
+                  >
+                    Videos Institucionales
                   </Link>
                 </div>
               )}
@@ -246,6 +302,46 @@ const Header = () => {
                 </div>
               </div>
             </div>
+
+            {/* Menú desplegable móvil de Recursos */}
+            <div className="py-2 border-b border-white/10">
+              <button 
+                onClick={toggleMobileResources}
+                className="flex items-center justify-between w-full text-gray-300 hover:text-white transition-colors duration-300"
+              >
+                <span>Recursos</span>
+                <svg 
+                  className={`w-4 h-4 ml-2 transition-transform duration-200 ${isMobileResourcesOpen ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileResourcesOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+              >
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link 
+                    to={'/guias-practicas'} 
+                    className="block text-gray-400 hover:text-white transition-colors duration-300 py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Guías prácticas
+                  </Link>
+                  <Link 
+                    to={'/videos-institucionales'} 
+                    className="block text-gray-400 hover:text-white transition-colors duration-300 py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Videos Institucionales
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
             <Link 
               to={'/ananta'} 
               className="text-gray-300 hover:text-white transition-colors duration-300 py-2 border-b border-white/10"

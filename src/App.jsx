@@ -15,6 +15,8 @@ import PoliticasPage from "./pages/PoliticasPage";
 import TerminosPage from "./pages/TerminosPage";
 import InformacionContactoPage from "./pages/InformacionContactoPage";
 import SociosPage from "./pages/SociosPage";
+import GuiasPage from "./pages/GuiasPage";
+import InstitucionalPage from "./pages/InstitucionalesPage";
 
 function TrackPageViews() {
   const location = useLocation();
@@ -56,6 +58,8 @@ function App() {
         <Route path="/gracias/:id" element={<InformacionContactoPage />} />
 
         <Route path="/socios" element={<SociosPage />} />
+        <Route path="/guias-practicas" element={<GuiasPage />} />
+        <Route path="/videos-institucionales" element={<InstitucionalPage />} />
       </Routes>
     </Router>
   );
