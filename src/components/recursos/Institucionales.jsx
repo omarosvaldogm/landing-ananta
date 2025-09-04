@@ -9,17 +9,18 @@ const Institucionales = () => {
     return (match && match[8].length === 11) ? match[8] : null;
   };
 
+  // Función para verificar si es un short
+  const isShort = (url) => {
+    return url.includes('youtube.com/shorts/') || url.includes('youtu.be/');
+  };
+
   // Función para convertir URL de visualización a URL de incrustación
   const convertToEmbedUrl = (url) => {
     const videoId = extractYoutubeId(url);
     if (videoId) {
-      // Si es un short, convertimos a URL de embed estándar
-      if (url.includes('youtube.com/shorts/')) {
-        return `https://www.youtube.com/embed/${videoId}`;
-      }
       return `https://www.youtube.com/embed/${videoId}`;
     }
-    return url; // Si no es un URL de YouTube, devolver el original
+    return url;
   };
 
   // Función para generar la URL de la miniatura
@@ -27,15 +28,14 @@ const Institucionales = () => {
     const videoId = extractYoutubeId(url);
     if (videoId) {
       // Para shorts de YouTube, usamos una miniatura diferente
-      if (url.includes('youtube.com/shorts/') || url.includes('youtu.be/')) {
+      if (isShort(url)) {
         return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       }
       return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
     }
-    return ''; // En caso de que no sea un URL válido de YouTube
+    return '';
   };
 
-  // Resto del código permanece igual...
   // Estado para almacenar los videos desde la API
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -57,12 +57,12 @@ const Institucionales = () => {
         const data = await response.json();
         
         if (data.success && data.data) {
-          // Mapeamos solo los campos que necesitamos: titulo y url
           const formattedVideos = data.data.map(video => ({
             id: video.id_video,
             title: video.titulo,
             url: video.url,
-            embedUrl: convertToEmbedUrl(video.url) // Convertimos a URL de embed
+            embedUrl: convertToEmbedUrl(video.url),
+            isShort: isShort(video.url)
           }));
           setVideos(formattedVideos);
         } else {
@@ -192,18 +192,17 @@ const Institucionales = () => {
           {videos.map((video) => (
             <motion.div
               key={video.id}
-              className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+              className={`bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer ${video.isShort ? 'short-card' : ''}`}
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
               onClick={() => openVideo(video)}
             >
-              <div className="relative pb-[56.25%] h-0 overflow-hidden">
+              <div className={`relative overflow-hidden ${video.isShort ? 'pb-[177.78%]' : 'pb-[56.25%]'}`}>
                 <img 
                   src={getThumbnailUrl(video.url)} 
                   alt={video.title}
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={(e) => {
-                    // Si la miniatura no está disponible, intentamos con la calidad estándar
                     const videoId = extractYoutubeId(video.url);
                     if (videoId) {
                       e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
@@ -217,6 +216,11 @@ const Institucionales = () => {
                     </svg>
                   </div>
                 </div>
+                {video.isShort && (
+                  <div className="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-md text-xs font-semibold">
+                    SHORT
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">{video.title}</h3>
@@ -277,6 +281,18 @@ const Institucionales = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <style jsx>{`
+        .short-card {
+          grid-row: span 2;
+        }
+        
+        @media (max-width: 768px) {
+          .short-card {
+            grid-row: span 1;
+          }
+        }
+      `}</style>
     </div>
   );
 };
