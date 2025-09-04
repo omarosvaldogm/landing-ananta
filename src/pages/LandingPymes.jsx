@@ -8,6 +8,9 @@ import PackageFeatures from '../components/landing/PackageFeatures';
 import BriefPresentation from '../components/landing/BriefPresentation';
 import TestimonialSection from '../components/landing/TestimonialSection';
 import FinalCta from '../components/landing/FinalCta';
+import Header from '../components/Header';
+import Carrusel from '../components/landing/Carrusel';
+import ModuleSelectorWithContact from '../components/pymes/ModuleSelectorWithContact';
 
 function LandingPymes() {
     const [selectedModules, setSelectedModules] = useState([]);
@@ -47,7 +50,8 @@ function LandingPymes() {
     };
 
     return (
-        <div className='bg-[#0a0a0a] min-h-screen flex flex-col'>    
+        <div className='bg-[#0a0a0a] min-h-screen flex flex-col'>
+            <Header/>
             <HeroPymes 
                 onDiscountClick={scrollToModuleSelector} 
                 onDetailsClick={scrollToFuncionalidades} // Nueva prop
@@ -55,12 +59,13 @@ function LandingPymes() {
             <div ref={funcionalidadesRef}> {/* Referencia para FuncionalidadesSection */}
                 <FuncionalidadesSection />
             </div>
+            <Carrusel />
             <PackageFeatures />
             <BriefPresentation />
             <TestimonialSection />
             <FinalCta onDiscountClick={scrollToModuleSelector} />
             <div ref={moduleSelectorRef}>
-                <ModuleSelector onModulesSelected={handleModulesSelected} />
+                <ModuleSelectorWithContact onModulesSelected={handleModulesSelected} />
             </div>
             {showPaymentForm && (
                 <div id="payment-form">

@@ -4,15 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Institucionales = () => {
   // Función para extraer el ID de un URL de YouTube
   const extractYoutubeId = (url) => {
-    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?)|(shorts\/))\??v?=?([^#&?]*).*/;
     const match = url.match(regExp);
-    return (match && match[7].length === 11) ? match[7] : null;
+    return (match && match[8].length === 11) ? match[8] : null;
   };
 
   // Función para convertir URL de visualización a URL de incrustación
   const convertToEmbedUrl = (url) => {
     const videoId = extractYoutubeId(url);
     if (videoId) {
+      // Si es un short, convertimos a URL de embed estándar
+      if (url.includes('youtube.com/shorts/')) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
       return `https://www.youtube.com/embed/${videoId}`;
     }
     return url; // Si no es un URL de YouTube, devolver el original
@@ -22,11 +26,16 @@ const Institucionales = () => {
   const getThumbnailUrl = (url) => {
     const videoId = extractYoutubeId(url);
     if (videoId) {
+      // Para shorts de YouTube, usamos una miniatura diferente
+      if (url.includes('youtube.com/shorts/') || url.includes('youtu.be/')) {
+        return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+      }
       return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
     }
     return ''; // En caso de que no sea un URL válido de YouTube
   };
 
+  // Resto del código permanece igual...
   // Estado para almacenar los videos desde la API
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -194,7 +203,7 @@ const Institucionales = () => {
                   alt={video.title}
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={(e) => {
-                    // Si la miniatura HD no está disponible, intentamos con la calidad estándar
+                    // Si la miniatura no está disponible, intentamos con la calidad estándar
                     const videoId = extractYoutubeId(video.url);
                     if (videoId) {
                       e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;

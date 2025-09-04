@@ -14,7 +14,7 @@ const PackageFeatures = () => {
     },
     {
       icon: <FiUsers className="w-8 h-8 text-[#9BBF5F]" />,
-      title: "Hasta 6 usuarios sin costo extra",
+      title: "Hasta 10 usuarios sin costo extra",
       description: "Colabora con tu equipo completo sin preocuparte por licencias adicionales."
     },
     {

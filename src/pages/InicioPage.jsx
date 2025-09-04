@@ -12,6 +12,7 @@ import Footer from '../components/Footer'
 import FeaturesSection from '../components/inicio/FeaturesSection'
 import FuncionalidadesSection from '../components/inicio/FuncionalidadesSection'
 import ModulesDetailView from '../components/inicio/ModulesDetailView'
+import FloatingDiscountButton from '../components/FloatingDiscountButton' // Importa el nuevo componente
 
 function InicioPage() {
   return (
@@ -26,6 +27,7 @@ function InicioPage() {
         <AliadosSection />
         <CtaSection />
         <Footer />
+        <FloatingDiscountButton /> {/* Agrega el botón flotante aquí */}
     </div>
   )
 }
