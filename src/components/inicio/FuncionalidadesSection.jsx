@@ -118,7 +118,7 @@ const FuncionalidadesSection = () => {
             >
               <div className="bg-[#121212] p-6 rounded-xl border border-[#1e1e1e] group-hover:border-[#9BBF5F]/50 transition-all duration-300 h-full flex flex-col items-center text-center shadow-md hover:shadow-[#9BBF5F]/10">
                 <div className="text-3xl mb-3">{feature.icon}</div>
-                <h3 className="text-white font-medium mb-2">{feature.name}</h3>
+                <p className="text-white font-medium mb-2">{feature.name}</p>
                 
                 {/* Tooltip */}
                 <div 

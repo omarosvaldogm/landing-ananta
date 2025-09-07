@@ -126,7 +126,7 @@ const ClientesSection = () => {
                     />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white">{t.nombre}</h4>
+                    <p className="text-xl font-bold text-white">{t.nombre}</p>
                     <p className="text-[#9BBF5F] text-sm">{t.empresa}</p>
                   </div>
                 </motion.div>

@@ -19,11 +19,11 @@ const FeatureCard = memo(({ icon, title, description, gradient, variants }) => (
         {icon}
       </div>
 
-      <h3 className="text-2xl font-bold mb-4 text-white">
+      <p className="text-2xl font-bold mb-4 text-white">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] to-[#73963C]">
           {title}
         </span>
-      </h3>
+      </p>
 
       <p className="text-gray-400">{description}</p>
     </div>
