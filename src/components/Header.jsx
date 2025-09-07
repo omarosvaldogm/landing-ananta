@@ -240,6 +240,7 @@ const Header = () => {
           <button 
             className="md:hidden text-gray-300 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>

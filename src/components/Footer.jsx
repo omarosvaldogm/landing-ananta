@@ -18,17 +18,17 @@ const Footer = () => {
               </span>
             </h3>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/SudSolutions" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-gray-300 hover:text-[#9BBF5F] hover:border-[#9BBF5F] transition-all">
-                <FaFacebook size={18} />
+              <a href="https://www.facebook.com/SudSolutions" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook" className="... ">
+                  <FaFacebook size={18} />
               </a>
-              <a href="https://www.linkedin.com/company/sud-solutions-sa-de-cv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-gray-300 hover:text-[#9BBF5F] hover:border-[#9BBF5F] transition-all">
-                <FaLinkedin size={18} />
+              <a href="https://www.linkedin.com/company/sud-solutions-sa-de-cv" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en LinkedIn" className="... ">
+                  <FaLinkedin size={18} />
               </a>
-              <a href="https://www.instagram.com/sud_solutions/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-gray-300 hover:text-[#9BBF5F] hover:border-[#9BBF5F] transition-all">
-                <FaInstagram size={18} />
+              <a href="https://www.instagram.com/sud_solutions/" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram" className="... ">
+                  <FaInstagram size={18} />
               </a>
-              <a href="https://youtube.com/@sudsolutions5163?si=Lwz0X5vv5TqZfTyo" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center text-gray-300 hover:text-[#9BBF5F] hover:border-[#9BBF5F] transition-all">
-                <FaYoutube size={18} />
+              <a href="https://youtube.com/@sudsolutions5163?si=Lwz0X5vv5TqZfTyo" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en YouTube" className="... ">
+                  <FaYoutube size={18} />
               </a>
             </div>
           </div>
