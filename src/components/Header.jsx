@@ -102,7 +102,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/img/LOGO2.png" alt="" className='h-14' />
+            <img src="/img/LOGO2.webp" alt="" className='h-14' />
           </div>
 
           {/* Menú de navegación - Desktop */}
