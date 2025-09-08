@@ -12,8 +12,11 @@ const FixedAdvisorBar = () => {
     <div className="fixed top-0 left-0 w-full bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white py-2 z-50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <span className="text-sm md:text-base font-medium">
+          <span className="hidden md:inline text-sm md:text-base font-medium">
             ¿Necesitas ayuda? Habla con uno de nuestros asesores
+          </span>
+          <span className="md:hidden text-sm font-medium">
+            ¿Necesitas ayuda?
           </span>
           <button 
             onClick={handleClick}
