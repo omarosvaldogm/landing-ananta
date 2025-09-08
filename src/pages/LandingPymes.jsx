@@ -11,7 +11,8 @@ import FinalCta from '../components/landing/FinalCta';
 import Header from '../components/Header';
 import Carrusel from '../components/landing/Carrusel';
 import ModuleSelectorWithContact from '../components/pymes/ModuleSelectorWithContact';
-
+import FloatingConsultantBar from '../components/inicio/FloatingConsultantBar';
+import FloatingWhatsappButton from '../components/landing/FloatingWhatsappButton';
 function LandingPymes() {
     const [selectedModules, setSelectedModules] = useState([]);
     const [showPaymentForm, setShowPaymentForm] = useState(false);
@@ -51,6 +52,7 @@ function LandingPymes() {
 
     return (
         <div className='bg-[#0a0a0a] min-h-screen flex flex-col'>
+            <FloatingConsultantBar/>
             <Header/>
             <HeroPymes 
                 onDiscountClick={scrollToModuleSelector} 
@@ -72,6 +74,7 @@ function LandingPymes() {
                     <PaymentForm selectedModules={selectedModules} />
                 </div>
             )}
+            <FloatingWhatsappButton />
             <Footer />
         </div>
     );

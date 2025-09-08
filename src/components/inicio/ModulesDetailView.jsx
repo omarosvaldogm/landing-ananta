@@ -23,6 +23,7 @@ const ModulesDetailView = () => {
         "Notificaciones en tiempo real"
       ],
       screenshots: [
+        "/img/modulos/REQUISICIÓN.png",
       ]
     },
     {
@@ -35,6 +36,7 @@ const ModulesDetailView = () => {
         "Integración con facturación"
       ],
       screenshots: [
+        "/img/modulos/ORDEN DE COMPRA.png",
       ]
     },
     {
@@ -122,6 +124,7 @@ const ModulesDetailView = () => {
       ],
       screenshots: [
         "/img/modulos/inventario2.png",
+        "/img/modulos/INVENTARIO.png",
       ]
     },
     {
@@ -198,6 +201,7 @@ const ModulesDetailView = () => {
         "Proveedores especializados"
       ],
       screenshots: [
+        "/img/modulos/NEUMATICOS.png",
       ]
     },
     {
@@ -211,6 +215,7 @@ const ModulesDetailView = () => {
       ],
       screenshots: [
         "/img/modulos/combustible2.png",
+        "/img/modulos/COMBUSTIBLE.png",
       ]
     },
     {
@@ -262,6 +267,8 @@ const ModulesDetailView = () => {
         "Integración con correo electrónico"
       ],
       screenshots: [
+        "/img/modulos/CRM2.png",
+        "/img/modulos/CRM.png"
       ]
     },
     {

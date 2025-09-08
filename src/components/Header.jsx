@@ -97,7 +97,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-5 left-1/2 -translate-x-1/2 w-full max-w-7xl z-50 bg-black/20 md:rounded-full shadow-lg backdrop-blur-md">
+    <header className="fixed top-5 left-1/2 -translate-x-1/2 w-full max-w-7xl z-50 bg-black/20 md:rounded-full shadow-lg backdrop-blur-md mt-12 md:mt-8">
       <div className="container mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}

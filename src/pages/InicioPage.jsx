@@ -13,10 +13,12 @@ import FeaturesSection from '../components/inicio/FeaturesSection'
 import FuncionalidadesSection from '../components/inicio/FuncionalidadesSection'
 import ModulesDetailView from '../components/inicio/ModulesDetailView'
 import FloatingDiscountButton from '../components/FloatingDiscountButton' // Importa el nuevo componente
+import FloatingConsultantBar from '../components/inicio/FloatingConsultantBar'
 
 function InicioPage() {
   return (
     <div className='bg-[#0a0a0a]'>
+        <FloatingConsultantBar />
         <Header />
         <HeroSection />
         <ToolsSection />

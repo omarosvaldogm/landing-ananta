@@ -89,42 +89,11 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen flex flex-col items-center justify-center overflow-hidden relative">
-      
-      {/* Badge de promoción exclusiva */}
-      {/* <motion.div
-        className="absolute top-6 right-6 z-20"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5, type: 'spring' }}
-      >
-        <div className="bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A] text-white px-4 py-2 rounded-full shadow-lg flex items-center">
-          <span className="font-bold mr-2 text-lg md:text-xl">¡Oferta exclusiva para contratación en línea!</span>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-          </svg>
-        </div>
-      </motion.div> */}
-
-      {/* Contador regresivo */}
-      {/* <motion.div 
-        className="absolute top-6 left-6 z-20 bg-[#1a1a1a] border border-[#73963C] rounded-lg px-4 py-2 shadow-lg"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}
-      >
-        <div className="flex items-center text-white">
-          <span className="font-bold mr-2">Finaliza en:</span>
-          <span className="font-mono text-[#9BBF5F]">
-            {String(timeLeft.hours).padStart(2, '0')}:
-            {String(timeLeft.minutes).padStart(2, '0')}:
-            {String(timeLeft.seconds).padStart(2, '0')}
-          </span>
-        </div>
-      </motion.div> */}
+    
 
       {/* Contenido principal */}
       <motion.div 
-        className="container mx-auto max-w-6xl px-6 flex flex-col lg:flex-row items-center justify-between relative z-10 py-16 md:py-32 w-full"
+        className="container mx-auto max-w-6xl px-6 flex flex-col lg:flex-row items-center justify-between relative z-10 py-16 md:py-44 w-full"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -210,12 +179,12 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
         >
           {/* Etiqueta de descuento */}
           <motion.div
-            className="absolute -top-6 -left-6 z-20"
+            className="absolute -bottom-0 md:-top-6 -left-6 z-20"
             initial={{ rotate: -15, scale: 0 }}
             animate={{ rotate: -15, scale: 1 }}
             transition={{ delay: 0.8, type: 'spring' }}
           >
-            <div className="bg-[#9BBF5F] text-[#0a0a0a] font-extrabold px-6 py-3 rounded-full shadow-xl transform rotate-[-15deg]">
+            <div className="bg-[#9BBF5F] text-[#0a0a0a] font-extrabold px-6 py-3 rounded-full shadow-xl transform rotate-0 md:rotate-[-15deg]">
               <div className="text-3xl">50% OFF</div>
               <div className="text-xs uppercase">En implementación</div>
             </div>

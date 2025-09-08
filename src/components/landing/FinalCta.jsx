@@ -1,12 +1,17 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-const FinalCta = ({ onDiscountClick }) => {
-  // Referencia para detectar cuándo el componente está en pantalla
+const FinalCta = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" }); // Se activa cuando el 20% del componente está visible
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
-  // Variantes para animaciones
+  const whatsappUrl = "https://wa.me/9932779253?text=%C2%A1Hola!%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20ERP%20%F0%9F%8C%90";
+
+  const handleWhatsappClick = () => {
+    // Abre el enlace de WhatsApp en una nueva pestaña
+    window.open(whatsappUrl, '_blank');
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -108,11 +113,12 @@ const FinalCta = ({ onDiscountClick }) => {
                 className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-semibold py-4 px-12 rounded-full text-lg md:text-xl relative group overflow-hidden"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(155, 191, 95, 0.4)" }}
                 whileTap={{ scale: 0.98 }}
-                onClick={onDiscountClick}
+                onClick={handleWhatsappClick}
+                aria-label="Chatear con un asesor sobre el paquete PYMES de Ananta a través de WhatsApp"
               >
                 <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span className="relative z-10 flex items-center justify-center">
-                  Comenzar ahora
+                  Chatear con un asesor
                   <svg
                     className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"

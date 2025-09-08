@@ -87,7 +87,7 @@ const HeroSection = () => {
 
       {/* Contenido principal */}
       <motion.div
-        className="container mx-auto px-6 flex-1 flex flex-col md:flex-row items-center justify-center relative z-10 py-16 mt-16 md:mt-16"
+        className="container mx-auto px-6 flex-1 flex flex-col md:flex-row items-center justify-center relative z-10 py-32 md:py-16 mt-16 md:mt-16"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
