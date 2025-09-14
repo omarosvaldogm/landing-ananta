@@ -30,93 +30,114 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitError(null);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitError(null);
 
-    const requiredFields = ['nombre', 'telefono', 'correo', 'mensaje', 'producto'];
-    const missingFields = requiredFields.filter(field => !formData[field]);
+  const requiredFields = ['nombre', 'telefono', 'correo', 'mensaje', 'producto'];
+  const missingFields = requiredFields.filter(field => !formData[field]);
 
-    if (missingFields.length > 0) {
-      setSubmitError(`Por favor completa los campos requeridos: ${missingFields.join(', ')}`);
-      setIsSubmitting(false);
-      return;
+  if (missingFields.length > 0) {
+    setSubmitError(`Por favor completa los campos requeridos: ${missingFields.join(', ')}`);
+    setIsSubmitting(false);
+    return;
+  }
+
+  try {
+    // 1. Guardar en la base de datos
+    const dbPayload = {
+      id_producto: parseInt(formData.producto),
+      id_pais: parseInt(formData.pais),
+      nombre: formData.nombre,
+      telefono: formData.telefono,
+      correo: formData.correo,
+      empresa: formData.empresa,
+      mensaje: formData.mensaje,
+      fecha_contacto: new Date().toISOString().slice(0, 19).replace('T', ' ')
+    };
+    
+    console.log('📦 Datos enviados a la base de datos:', dbPayload);
+
+    const dbResponse = await fetch(`${import.meta.env.VITE_API_URL}/clientes/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dbPayload)
+    });
+
+    if (!dbResponse.ok) {
+      const errorData = await dbResponse.json();
+      throw new Error(errorData.message || 'Error al guardar en la base de datos');
     }
 
-    try {
-      // 1. Guardar en la base de datos
-      const dbResponse = await fetch(`${import.meta.env.VITE_API_URL}/clientes/`, {
+    // Obtener los datos completos del cliente recién creado
+    const clienteCreado = await dbResponse.json();
+    const id_cliente = clienteCreado.id;
+    
+    console.log('✅ Cliente creado en BD:', clienteCreado);
+    console.log('🆔 ID del cliente:', id_cliente);
+
+    // 2. Enviar correos en paralelo
+    const emailPayload = {
+      id_cliente: id_cliente,
+      nombre: formData.nombre,
+      correo: formData.correo,
+      producto: formData.producto,
+      mensaje: formData.mensaje
+    };
+    
+    const adminEmailPayload = {
+      id_cliente: id_cliente,
+      nombre: formData.nombre,
+      correo: formData.correo,
+      telefono: formData.telefono,
+      empresa: formData.empresa,
+      producto: formData.producto,
+      pais: formData.pais,
+      mensaje: formData.mensaje
+    };
+    
+    console.log('📧 Datos para correo de confirmación:', emailPayload);
+    console.log('📧 Datos para correo de administrador:', adminEmailPayload);
+
+    const [emailResponse, adminEmailResponse] = await Promise.all([
+      fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-confirmacion`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          id_producto: parseInt(formData.producto),
-          id_pais: parseInt(formData.pais),
-          nombre: formData.nombre,
-          telefono: formData.telefono,
-          correo: formData.correo,
-          empresa: formData.empresa,
-          mensaje: formData.mensaje,
-          fecha_contacto: new Date().toISOString().slice(0, 19).replace('T', ' ')
-        })
-      });
+        body: JSON.stringify(emailPayload)
+      }),
+      fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-notificacion-admin`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(adminEmailPayload)
+      })
+    ]);
 
-      if (!dbResponse.ok) {
-        const errorData = await dbResponse.json();
-        throw new Error(errorData.message || 'Error al guardar en la base de datos');
-      }
+    // Verificar respuestas de los correos
+    console.log('📨 Respuesta correo confirmación:', emailResponse.status, emailResponse.statusText);
+    console.log('📨 Respuesta correo administrador:', adminEmailResponse.status, adminEmailResponse.statusText);
 
-      // Obtener el ID del cliente recién creado para la redirección
-      const responseData = await dbResponse.json();
-      const uuid = responseData.uuid; // Obtener el UUID de la respuesta
-
-      // 2. Enviar correos en paralelo
-      const [emailResponse, adminEmailResponse] = await Promise.all([
-        fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-confirmacion`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            nombre: formData.nombre,
-            correo: formData.correo,
-            producto: formData.producto,
-            mensaje: formData.mensaje
-          })
-        }),
-        fetch(`${import.meta.env.VITE_API_URL}/contacto/enviar-notificacion-admin`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            nombre: formData.nombre,
-            correo: formData.correo,
-            telefono: formData.telefono,
-            empresa: formData.empresa,
-            producto: formData.producto,
-            pais: formData.pais,
-            mensaje: formData.mensaje
-          })
-        })
-      ]);
-
-      if (!emailResponse.ok || !adminEmailResponse.ok) {
-        throw new Error('Error al enviar los correos de confirmación');
-      }
-
-      // Redirigir a la página de confirmación con el ID del cliente
-      navigate(`/gracias/${uuid}`);
-
-    } catch (error) {
-      console.error('Error:', error);
-      setSubmitError(error.message || 'Hubo un problema al enviar el formulario. Por favor intenta nuevamente.');
-    } finally {
-      setIsSubmitting(false);
+    if (!emailResponse.ok || !adminEmailResponse.ok) {
+      throw new Error('Error al enviar los correos de confirmación');
     }
-  };
+
+    // Redirigir a la página de confirmación con el ID del cliente
+    console.log('🔗 Redirigiendo a:', `/gracias/${clienteCreado.uuid}`);
+    navigate(`/gracias/${clienteCreado.uuid}`);
+
+  } catch (error) {
+    console.error('❌ Error:', error);
+    setSubmitError(error.message || 'Hubo un problema al enviar el formulario. Por favor intenta nuevamente.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="bg-[#0a0a0a] py-16 px-6 relative overflow-hidden">
