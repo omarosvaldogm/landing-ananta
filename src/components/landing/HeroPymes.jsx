@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
@@ -7,6 +7,9 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
     minutes: 0,
     seconds: 0
   });
+
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true); // Estado para controlar mute
 
   // Contador regresivo
   useEffect(() => {
@@ -24,7 +27,11 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
     return () => clearInterval(timer);
   }, []);
 
-  // Animaciones
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
+  // Animaciones (mantener las mismas que antes)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -72,8 +79,7 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
     }
   };
 
-  // Nueva animación para la laptop
-  const laptopVariants = {
+  const videoVariants = {
     hidden: { opacity: 0, scale: 0.8, x: 50 },
     visible: {
       opacity: 1,
@@ -153,7 +159,7 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
                     variants={pulseVariants}
                     initial="initial"
                     animate="animate"
-                    onClick={onDiscountClick} // Agregar el onClick aquí
+                    onClick={onDiscountClick}
                 >
                     <span className="relative z-10">¡Quiero mi descuento!</span>
                     <span className="absolute inset-0 bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A] opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
@@ -163,14 +169,14 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
                     className="bg-transparent border-2 border-[#73963C] text-white font-bold py-3 px-8 rounded-full hover:bg-[#73963C]/20 transition-all duration-300 text-lg"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={onDetailsClick} // Agregar el onClick aquí
+                    onClick={onDetailsClick}
                 >
                     Ver detalles
                 </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* Dispositivos a la derecha */}
+        {/* Video de YouTube a la derecha */}
         <motion.div 
           className="w-full lg:w-1/2 relative"
           variants={floatVariants}
@@ -192,16 +198,43 @@ const HeroSectionPyme = ({ onDiscountClick, onDetailsClick }) => {
           
           <motion.div 
             className="w-full flex justify-center items-center relative"
-            variants={laptopVariants}
+            variants={videoVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.img 
-              src="/img/ananlap.png" 
-              alt="Ananta ERP" 
-              className="w-full max-w-lg h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
-              whileHover={{ scale: 1.02 }}
-            />
+            <div className="relative w-full max-w-lg aspect-video rounded-lg overflow-hidden shadow-2xl">
+              <iframe
+                ref={videoRef}
+                src={`https://www.youtube.com/embed/-ZZKnlY5c6M?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=-ZZKnlY5c6M&controls=0&modestbranding=1&rel=0`}
+                title="Demo Ananta ERP"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              
+              {/* Botón para activar/desactivar sonido */}
+              <motion.button
+                  className="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 z-30"
+                  onClick={toggleMute}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+              >
+                  {isMuted ? (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                      </svg>
+                  ) : (
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15.536 8.464a5 5 0 010 7.072M12 6l-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h4l2 2 4-4V6z" />
+                      </svg>
+                  )}
+              </motion.button>
+              
+              {/* Overlay para mejorar la visibilidad */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>
