@@ -117,7 +117,7 @@ const AboutUs = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 leading-relaxed text-justify">
-            Con Ananta y Varuna buscamos ayudar a las empresas a mejorar sus controles y
+            Con Ananta buscamos ayudar a las empresas a mejorar sus controles y
             procesos internos. Para nosotros, cada cliente B2B es más que un número: es
             un socio estratégico que debe encontrar soluciones reales en nuestro
             software.
