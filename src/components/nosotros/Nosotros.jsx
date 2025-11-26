@@ -102,29 +102,97 @@ const AboutUs = () => {
       </section>
 
       {/* Filosofía */}
-      <section className="container mx-auto px-6 py-20">
-        <motion.div
-          className="bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-12 text-center shadow-lg"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <h2 className="text-3xl font-bold mb-6">
-            Nuestra{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A]">
-              Filosofía
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed text-justify">
-            Con Ananta buscamos ayudar a las empresas a mejorar sus controles y
-            procesos internos. Para nosotros, cada cliente B2B es más que un número: es
-            un socio estratégico que debe encontrar soluciones reales en nuestro
-            software.
-          </p>
-        </motion.div>
+      <section className="py-10">
+        <div className="container mx-auto px-6">
+          <motion.div
+            className="max-w-4xl mx-auto bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-12 text-center shadow-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <h2 className="text-3xl font-bold mb-6">
+              Nuestra{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A]">
+                Filosofía
+              </span>
+            </h2>
+            <p className="text-gray-300 leading-relaxed text-lg text-justify">
+              Con Ananta buscamos ayudar a las empresas a mejorar sus controles y
+              procesos internos. Para nosotros, cada cliente B2B es más que un número: es
+              un socio estratégico que debe encontrar soluciones reales en nuestro
+              software.
+            </p>
+          </motion.div>
+        </div>
       </section>
-
+      <section className="py-10">
+        <div className="container mx-auto px-6">
+          <motion.div
+            className="max-w-4xl mx-auto bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-12 text-center shadow-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <h2 className="text-3xl font-bold mb-6">
+              Nuestra{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A]">
+                Misión
+              </span>
+            </h2>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              Transformar la gestión empresarial a través de tecnología 
+              innovadora y confiable.
+            </p>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              Desarrollamos soluciones integrales que centralizan operaciones, 
+              optimizan recursos y garantizan el cumplimiento normativo, 
+              permitiendo a nuestros clientes tomar decisiones más inteligentes 
+              y alcanzar su máximo potencial operativo.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg text-justify">
+              En Sud Solutions no solo proveemos software, construimos el 
+              ecosistema tecnológico que impulsa la eficiencia y el crecimiento 
+              sostenible de las organizaciones.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+          {/* Visión */}
+          <section className="py-10">
+        <div className="container mx-auto px-6">
+          <motion.div
+            className="max-w-4xl mx-auto bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-12 text-center shadow-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <h2 className="text-3xl font-bold mb-6">
+              Nuestra{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] to-[#4A6D1A]">
+                Visión
+              </span>
+            </h2>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              Ser el socio tecnológico indispensable para las empresas de 
+              Latinoamérica que buscan excelencia operativa.
+            </p>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              Nos distinguiremos por nuestra capacidad única de integrar 
+              ecosistemas complejos en una sola plataforma intuitiva, 
+              anticipándonos a las necesidades del mercado con innovación 
+              constante y soluciones que realmente funcionan.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg text-justify">
+              En unos años queremos ser la primera opción cuando una organización 
+              piense en transformación digital, gestión empresarial o 
+              monitoreo de flotillas.
+            </p>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -43,10 +43,9 @@ const GPS = () => {
             <div className=" md:pr-8 mb-8 md:mb-0">
               <h2 className="text-3xl md:text-2xl font-bold mb-4 text-white">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A]">
-                  ¡Accede a rutas de hasta 8 meses de antigüedad!
-
-
+                ¡Accede a rutas de hasta 12 meses de antigüedad!
                 </span>
+               
               </h2>
               
               <p className="text-xl text-gray-300 mb-8">
@@ -54,6 +53,9 @@ const GPS = () => {
 
 Nuestros equipos GPS transmiten datos directamente a la plataforma de rastreo, facilitando la visualización de recorridos.
               </p>
+              <p className="text-xl text-gray-300 mb-8">
+                Además, nuestros GPS cumplen con las normas de calidad y requisitos oficiales de la CNE (Comisión Nacional de Energía) garantizando el cumplimiento total de tus unidades.
+                </p>
               <Link to={'/contacto'}>
               <button className="bg-gradient-to-r from-[#9BBF5F] via-[#73963C] to-[#4A6D1A] text-white font-bold py-4 px-10 rounded-full hover:shadow-lg hover:shadow-[#9BBF5F]/40 transition-all duration-300 transform hover:scale-[1.02] group">
                 Más información
@@ -173,14 +175,15 @@ Nuestros equipos GPS transmiten datos directamente a la plataforma de rastreo, f
 </div>
           
           <motion.div 
-  className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
+  className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-4xl mx-auto"
   variants={containerVariants}
 >
   {[
     "Venta y arrendamiento de dispositivos",
     "Datos y plataforma de rastreo incluida",
     "Tecnología 4G con amplia cobertura nacional e internacional",
-    "Asistencia las 24 hrs en caso de robo"
+    "Asistencia las 24 hrs en caso de robo",
+    "Cumplimiento GPS con la CNE",
   ].map((feature, index) => (
     <motion.div 
       key={index}
@@ -189,7 +192,7 @@ Nuestros equipos GPS transmiten datos directamente a la plataforma de rastreo, f
       whileHover={{ scale: 1.05 }}
     >
       <div className="text-[#9BBF5F] text-2xl mb-2">
-        {["💰", "📡", "🌐", "🛡️"][index]}
+        {["💰", "📡", "🌐", "🛡️", "✅"][index]}
       </div>
       <p className="text-gray-300">{feature}</p>
     </motion.div>
