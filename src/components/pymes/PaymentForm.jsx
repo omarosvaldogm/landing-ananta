@@ -382,8 +382,8 @@ const handlePayPalSuccess = async (details) => {
                   <div className="flex justify-between">
                     <span className="text-gray-400">Implementación:</span>
                     <div className="flex items-center">
-                      <span className="text-gray-400 line-through mr-2">$18,500</span>
-                      <span className="font-bold text-[#9BBF5F]">$9,250</span>
+                      <span className="text-gray-400 line-through mr-2">$37,000</span>
+                      <span className="font-bold text-[#9BBF5F]">$18,500</span>
                     </div>
                   </div>
                   
@@ -394,13 +394,13 @@ const handlePayPalSuccess = async (details) => {
                   
                   <div className="flex justify-between text-sm text-[#9BBF5F]">
                     <span>Descuento (50%):</span>
-                    <span>$9,250</span>
+                    <span>$18,500</span>
                   </div>
                   
                   <div className="border-t border-[#2a2a2a] pt-3 mt-3">
                     <div className="flex justify-between font-bold text-lg">
                       <span className="text-gray-300">Total inicial:</span>
-                      <span className="text-[#9BBF5F]">$9,250 MXN</span>
+                      <span className="text-[#9BBF5F]">$18,500 MXN</span>
                     </div>
                   </div>
                 </div>
