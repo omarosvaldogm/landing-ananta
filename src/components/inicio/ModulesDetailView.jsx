@@ -317,7 +317,7 @@ const ModulesDetailView = () => {
     },
     {
       name: "Control de personal y asistencia",
-      description: "Gestión completa de servicios logísticos y traslados con documentación automática de cada operación.",
+      description: "Administra la información de tu equipo y controla horarios, entradas y salidas desde una sola plataforma, accesible desde la web y la app móvil.",
       features: [
         "Registro y gestión de información de empleados",
         "Control de asistencia: entradas, salidas y horarios de comida",
