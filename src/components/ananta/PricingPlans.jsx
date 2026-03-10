@@ -10,7 +10,7 @@ const PricingPlansToggle = () => {
   const licensePlans = [
     {
       name: "BÁSICO",
-      price: "$6,800",
+      price: "$7,800",
       period: "LICENCIA MENSUAL",
       features: [
         "SIN DESARROLLOS",
@@ -24,7 +24,7 @@ const PricingPlansToggle = () => {
     },
     {
       name: "INTERMEDIO",
-      price: "$8,800",
+      price: "$9,800",
       period: "LICENCIA MENSUAL",
       features: [
         "1 DESARROLLOS",
@@ -38,7 +38,7 @@ const PricingPlansToggle = () => {
     },
     {
       name: "PREMIUM",
-      price: "$22,800",
+      price: "$23,800",
       period: "LICENCIA MENSUAL",
       features: [
         "2 DESARROLLOS",
@@ -55,7 +55,7 @@ const PricingPlansToggle = () => {
   const implementationPlans = [
     {
       name: "BÁSICO",
-      price: "$3,800",
+      price: "$4,800",
       period: "MENSUALIDAD",
       features: [
         "SIN DESARROLLOS",
@@ -70,7 +70,7 @@ const PricingPlansToggle = () => {
     },
     {
       name: "INTERMEDIO",
-      price: "$4,800",
+      price: "$5,800",
       period: "MENSUALIDAD",
       features: [
         "1 DESARROLLOS",
@@ -85,7 +85,7 @@ const PricingPlansToggle = () => {
     },
     {
       name: "PREMIUM",
-      price: "$15,800",
+      price: "$16,800",
       period: "MENSUALIDAD",
       features: [
         "2 DESARROLLOS",

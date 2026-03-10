@@ -314,6 +314,21 @@ const ModulesDetailView = () => {
         "/img/modulos/viajes2.png",
         "/img/modulos/VIAJES.png",
       ]
+    },
+    {
+      name: "Control de personal y asistencia",
+      description: "Gestión completa de servicios logísticos y traslados con documentación automática de cada operación.",
+      features: [
+        "Registro y gestión de información de empleados",
+        "Control de asistencia: entradas, salidas y horarios de comida",
+        "Asignación y control de horarios laborales",
+        "Gestión de vacaciones y días disponibles",
+        "Acceso y registro desde la web o la app móvil"
+      ],
+      screenshots: [
+        "/img/modulos/asistencia.png",
+        "/img/modulos/asistencia2.png",
+      ]
     }
   ];
 
@@ -555,7 +570,8 @@ function getModuleIcon(moduleName) {
     "CRM": "👥",
     "Monitoreo activo": "👁️",
     "Punto de venta": "💲",
-    "Viajes": "✈️"
+    "Viajes": "✈️",
+    "Control de personal y asistencia": "⏱️"
   };
   
   return icons[moduleName] || "✨";
