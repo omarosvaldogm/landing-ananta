@@ -10,25 +10,25 @@ const PricingPlansToggle = () => {
   const licensePlans = [
     {
       name: "BÁSICO",
-      price: "$7,800",
+      price: "$14,000",
       period: "LICENCIA MENSUAL",
       features: [
         "SIN DESARROLLOS",
-        "25 usuarios",
+        "20 usuarios",
         "Acceso a todos los módulos",
         "1000 timbrados en Facturas y carta parte",
-        "2 razones sociales",
+        "6 razones sociales",
         "Sin desarrollos"
       ],
       highlight: false
     },
     {
       name: "INTERMEDIO",
-      price: "$9,800",
+      price: "$18,500",
       period: "LICENCIA MENSUAL",
       features: [
         "1 DESARROLLOS",
-        "36 usuarios",
+        "30 usuarios",
         "Acceso a todos los módulos",
         "Facturas y carta parte ilimitadas",
         "3 razones sociales",
@@ -38,7 +38,7 @@ const PricingPlansToggle = () => {
     },
     {
       name: "PREMIUM",
-      price: "$23,800",
+      price: "$40,000",
       period: "LICENCIA MENSUAL",
       features: [
         "2 DESARROLLOS",
@@ -55,11 +55,11 @@ const PricingPlansToggle = () => {
   const implementationPlans = [
     {
       name: "BÁSICO",
-      price: "$4,800",
+      price: "$6,000",
       period: "MENSUALIDAD",
       features: [
         "SIN DESARROLLOS",
-        "25 usuarios",
+        "20 usuarios",
         "Acceso a todos los módulos",
         "1,000 timbrados en Facturas y carta porte",
         "6 razones sociales",
@@ -70,13 +70,13 @@ const PricingPlansToggle = () => {
     },
     {
       name: "INTERMEDIO",
-      price: "$5,800",
+      price: "$8,000",
       period: "MENSUALIDAD",
       features: [
         "1 DESARROLLOS",
-        "35 usuarios",
+        "30 usuarios",
         "Acceso a todos los módulos",
-        "Facturas y carta porte ilimitadas",
+        "2,000 timbrados en Facturas y carta porte",
         "10 razones sociales",
         "Tiempos de desarrollo de 6 a 12 meses"
       ],
@@ -85,7 +85,7 @@ const PricingPlansToggle = () => {
     },
     {
       name: "PREMIUM",
-      price: "$16,800",
+      price: "$21,000",
       period: "MENSUALIDAD",
       features: [
         "2 DESARROLLOS",
