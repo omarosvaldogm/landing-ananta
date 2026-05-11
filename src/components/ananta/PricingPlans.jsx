@@ -30,7 +30,7 @@ const PricingPlansToggle = () => {
         "1 DESARROLLOS",
         "30 usuarios",
         "Acceso a todos los módulos",
-        "Facturas y carta parte ilimitadas",
+        "2000 timbrados en Facturas y carta parte",
         "3 razones sociales",
         "Tiempos de desarrollo de 6 a 12 meses"
       ],
