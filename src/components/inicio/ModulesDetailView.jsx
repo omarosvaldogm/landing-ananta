@@ -329,6 +329,21 @@ const ModulesDetailView = () => {
         "/img/modulos/asistencia.png",
         "/img/modulos/asistencia2.png",
       ]
+    },
+    {
+      name: "Producción",
+      description: "Optimiza y controla tu producción de principio a fin. Controla y supervisa toda tu producción desde una sola plataforma. Mejora tus tiempos, control y eficiencia.",
+      features: [
+        "Creación de órdenes de producción",
+        "Seguimiento de procesos paso a paso",
+        "Gestión por líneas de producción",
+        "Control de estatus y avances en tiempo real",
+        "Historial completo de producción y operaciones"
+      ],
+      screenshots: [
+        "/img/modulos/produccion_1.jpeg",
+        "/img/modulos/produccion_2.jpeg"
+      ]
     }
   ];
 
@@ -571,7 +586,8 @@ function getModuleIcon(moduleName) {
     "Monitoreo activo": "👁️",
     "Punto de venta": "💲",
     "Viajes": "✈️",
-    "Control de personal y asistencia": "⏱️"
+    "Control de personal y asistencia": "⏱️",
+    "Producción": "🧰"
   };
   
   return icons[moduleName] || "✨";

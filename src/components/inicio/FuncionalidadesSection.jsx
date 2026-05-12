@@ -56,7 +56,8 @@ const FuncionalidadesSection = () => {
     { name: "Monitoreo activo", description: "Centraliza la supervisión de tu flotilla con alertas y reportes.", icon: "👁️" },
     { name: "Punto de venta", description: "Cobra, gestiona inventarios y factura en un solo lugar.", icon: "💲" },
     { name: "Viajes", description: "Gestiona servicios logísticos con reportes automáticos.", icon: "🚛" },
-    { name: "Control de personal y asistencia", description: "Controla el personal y asistencia de tu empresa.", icon: "⏱️" }
+    { name: "Control de personal y asistencia", description: "Controla el personal y asistencia de tu empresa.", icon: "⏱️" },
+    { name: "Producción", description: "Optimiza y controla tu producción de principio a fin.", icon: "🧰" }
   ];
 
   return (
