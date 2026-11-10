@@ -49,7 +49,7 @@ const PymesHero = ({onDiscountClick}) => {
 
       {/* Contenido principal */}
       <div className="container mx-auto px-6 lg:px-8 xl:px-12 flex flex-col lg:flex-row items-center justify-between relative z-10 py-20 mt-16">
-        {/* Sección de texto y precios */}
+        {/* Sección de texto */}
         <motion.div 
           className="w-full lg:w-1/2 mb-12 lg:mb-0 lg:pr-10"
           initial="hidden"
@@ -79,7 +79,7 @@ const PymesHero = ({onDiscountClick}) => {
             Optimiza tus operaciones con un sistema integral diseñado para escalar con tu negocio.
           </motion.p>
 
-          {/* Tarjeta de precios premium */}
+          {/* Tarjeta del plan premium */}
           <motion.div 
             className="bg-[#121212] border border-[#252525] rounded-xl p-8 relative overflow-hidden group"
             variants={itemVariants}
@@ -97,24 +97,6 @@ const PymesHero = ({onDiscountClick}) => {
                   </span>
                 </h2>
                 <p className="text-gray-400">Todo lo que necesitas para gestionar tu negocio</p>
-              </div>
-
-              {/* Precios */}
-              <div className="mb-8 grid grid-cols-2 gap-6">
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Implementación</div>
-                  <div className="flex items-center">
-                    <span className="text-gray-400 line-through mr-2 text-sm">$18,500</span>
-                    <span className="text-2xl font-bold text-[#9BBF5F]">$9,250</span>
-                  </div>
-                  <div className="text-xs text-[#9BBF5F] font-medium mt-1">50% de descuento</div>
-                </div>
-                
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Mensualidad</div>
-                  <div className="text-2xl font-bold text-white">$3,800</div>
-                  <div className="text-xs text-gray-500 mt-1">Precio fijo sin sorpresas</div>
-                </div>
               </div>
 
               {/* Características */}

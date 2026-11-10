@@ -10,7 +10,6 @@ const PricingPlansToggle = () => {
   const licensePlans = [
     {
       name: "BÁSICO",
-      price: "$14,000",
       period: "LICENCIA MENSUAL",
       features: [
         "SIN DESARROLLOS",
@@ -24,7 +23,6 @@ const PricingPlansToggle = () => {
     },
     {
       name: "INTERMEDIO",
-      price: "$18,500",
       period: "LICENCIA MENSUAL",
       features: [
         "1 DESARROLLOS",
@@ -38,7 +36,6 @@ const PricingPlansToggle = () => {
     },
     {
       name: "PREMIUM",
-      price: "$40,000",
       period: "LICENCIA MENSUAL",
       features: [
         "2 DESARROLLOS",
@@ -55,7 +52,6 @@ const PricingPlansToggle = () => {
   const implementationPlans = [
     {
       name: "BÁSICO",
-      price: "$6,000",
       period: "MENSUALIDAD",
       features: [
         "SIN DESARROLLOS",
@@ -70,7 +66,6 @@ const PricingPlansToggle = () => {
     },
     {
       name: "INTERMEDIO",
-      price: "$8,000",
       period: "MENSUALIDAD",
       features: [
         "1 DESARROLLOS",
@@ -85,7 +80,6 @@ const PricingPlansToggle = () => {
     },
     {
       name: "PREMIUM",
-      price: "$21,000",
       period: "MENSUALIDAD",
       features: [
         "2 DESARROLLOS",
@@ -101,10 +95,10 @@ const PricingPlansToggle = () => {
   ];
 
   const addons = [
-    { name: "Usuario extra", price: "$290/mes" },
-    { name: "Facturación ilimitada", price: "$1,160/mes" },
-    { name: "Razón social extra", price: "$580/mes" },
-    { name: "Razones sociales ilimitadas", price: "$1,200/mes" }
+    { name: "Usuario extra" },
+    { name: "Facturación ilimitada" },
+    { name: "Razón social extra" },
+    { name: "Razones sociales ilimitadas" }
   ];
 
   const currentPlans = showImplementation ? implementationPlans : licensePlans;
@@ -226,7 +220,6 @@ const PricingPlansToggle = () => {
                   
                   <div className="mb-6">
                     <p className="text-gray-400 text-sm">{plan.period}</p>
-                    <p className="text-3xl font-bold text-white">{plan.price}</p>
                     {showImplementation && (
                       <p className="text-[#9BBF5F] text-sm mt-2">
                         {plan.contactMessage}
@@ -274,7 +267,6 @@ const PricingPlansToggle = () => {
                   className="block bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg p-4 hover:border-[#9BBF5F]/30 transition-colors duration-300"
                 >
                   <h4 className="text-white font-medium mb-1">{addon.name}</h4>
-                  <p className="text-[#9BBF5F] font-bold">{addon.price}</p>
                 </Link>
               ))}
             </div>

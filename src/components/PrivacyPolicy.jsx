@@ -52,8 +52,8 @@ const PrivacyPolicy = () => {
             así como las opciones que usted tiene con respecto a ellos. Le recomendamos que lo lea 
             detalladamente ya que es aplicable por el simple uso o acceso a cualquiera de las páginas 
             y aplicaciones web o móviles, suscripción a membresías, acceso a cursos o talleres, 
-            softwares y aplicaciones en general que integran el sitio www.sudsolutions.mx por lo que 
-            entenderemos que acepta el presente aviso de privacidad y acuerda en obligarse en su cumplimiento.
+            softwares y aplicaciones en general que integran el sitio www.sudsolutions.mx, así como a la 
+            aplicación móvil Ananta (Android y iOS), por lo que entenderemos que acepta el presente aviso de privacidad y acuerda en obligarse en su cumplimiento.
           </p>
         </motion.div>
       </section>
@@ -77,7 +77,8 @@ const PrivacyPolicy = () => {
               Sud Solutions S.A.S. (en lo sucesivo Sud Solutions), es el único responsable del tratamiento 
               de los datos personales que los usuarios y suscriptores proporcionan al registrarse y 
               suscribirse en alguna de las membresías que ofrecemos, así como de los datos que proporcione 
-              para el acceso a los cursos o talleres de su elección.
+              para el acceso a los cursos o talleres de su elección y de los datos recopilados a través de 
+              la aplicación móvil Ananta.
             </p>
             <p className="text-gray-300 leading-relaxed text-lg text-justify">
               La seguridad es muy importante para nosotros, por lo que estamos comprometidos con la 
@@ -135,6 +136,39 @@ const PrivacyPolicy = () => {
               de las opciones que ofrecemos para ello.
             </p>
           </div>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold mb-4 text-[#9BBF5F]">3. Datos recopilados por la aplicación móvil Ananta</h3>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              La aplicación Ananta es utilizada por el personal operativo de las empresas que contratan 
+              nuestros servicios (choferes, técnicos y personal de campo). Además de la información básica, 
+              la aplicación puede recopilar:
+            </p>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              <span className="font-semibold text-[#9BBF5F]">Ubicación precisa y aproximada.</span> Coordenadas GPS 
+              (latitud y longitud), fecha y hora de cada registro y precisión de la lectura. Se recopila:
+            </p>
+            <ul className="list-disc pl-6 text-gray-300 mb-4 text-lg">
+              <li className="mb-2">Durante una jornada o ruta de reparto activa, desde que el usuario toca "Iniciar ruta" hasta que cierra la jornada. Durante este tiempo la ubicación se registra incluso cuando la aplicación está cerrada o no se está usando, y el dispositivo muestra una notificación permanente ("Ruta en curso") mientras el registro está activo.</li>
+              <li>Al registrar asistencia, confirmar entregas, capturar evidencias o usar los mapas dentro de la aplicación.</li>
+            </ul>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              El usuario puede negar o retirar el permiso de ubicación en cualquier momento desde los ajustes 
+              de su dispositivo; en ese caso, las funciones que dependen de la ubicación no estarán disponibles.
+            </p>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              <span className="font-semibold text-[#9BBF5F]">Fotografías y firmas.</span> Imágenes tomadas con la cámara 
+              o elegidas de la galería, y firmas capturadas como evidencia de entregas, servicios o recepciones.
+            </p>
+            <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+              <span className="font-semibold text-[#9BBF5F]">Audio.</span> Notas de voz que el usuario graba y envía 
+              voluntariamente en el chat de la aplicación.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg text-justify">
+              <span className="font-semibold text-[#9BBF5F]">Identificadores del dispositivo.</span> Identificador para 
+              el envío de notificaciones push.
+            </p>
+          </div>
         </motion.div>
       </section>
 
@@ -162,7 +196,9 @@ const PrivacyPolicy = () => {
               <li className="mb-3">Crear y registrar su cuenta en www.sudsolutions.mx así como hacerle llegar información sobre la misma.</li>
               <li className="mb-3">Identificar su tipo de plan y otorgarle los beneficios que usted obtiene por las características de su suscripción.</li>
               <li className="mb-3">Brindarle correctamente los productos, servicios y beneficios que solicite o suscriba con nosotros.</li>
-              <li>Integrar bases de datos de uso interno, así como expedientes y sistemas necesarios para la correcta operación del sitio web.</li>
+              <li className="mb-3">Integrar bases de datos de uso interno, así como expedientes y sistemas necesarios para la correcta operación del sitio web.</li>
+              <li className="mb-3">Registrar y validar las rutas de reparto, dar seguimiento a entregas y unidades, y registrar la asistencia del personal operativo a través de la aplicación Ananta.</li>
+              <li>Brindar seguridad operativa a los conductores y a las unidades de las empresas que contratan nuestros servicios.</li>
             </ul>
             
             <h3 className="text-xl font-semibold mb-4 mt-8 text-[#9BBF5F]">Finalidades secundarias</h3>
@@ -174,8 +210,12 @@ const PrivacyPolicy = () => {
               <li className="mb-2">Ofrecerle otros productos y servicios propios de Sud Solutions</li>
               <li className="mb-2">Remitirle promociones de otros bienes, servicios y/o productos</li>
               <li className="mb-2">Realizar análisis estadísticos y generación de modelos de información</li>
-              <li>Hacerlo participe en encuestas, sorteos y promociones</li>
+              <li>Hacerlo partícipe en encuestas, sorteos y promociones</li>
             </ul>
+            <p className="text-gray-300 mt-6 leading-relaxed text-lg text-justify">
+              Los datos de ubicación, fotografías, firmas y audio recopilados por la aplicación Ananta no se 
+              utilizan para mercadotecnia, publicidad ni prospección comercial, y no se venden a terceros.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -200,7 +240,7 @@ const PrivacyPolicy = () => {
             <p className="text-gray-300 mb-6 leading-relaxed text-lg text-justify">
               Usted en cualquier momento podrá limitar el uso o divulgación de sus datos personales 
               enviando un correo electrónico a <span className="text-[#9BBF5F]">contacto@sudsolutions.co</span> indicándonos 
-              en el cuerpo del correo su nombre completo y que dato desea que no sea divulgado.
+              en el cuerpo del correo su nombre completo y qué dato desea que no sea divulgado.
             </p>
           </div>
           
@@ -244,6 +284,13 @@ const PrivacyPolicy = () => {
             
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-[#9BBF5F]">Transferencia de datos</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed text-lg text-justify">
+                Los datos recopilados por la aplicación Ananta se envían de forma cifrada (HTTPS) a nuestros 
+                servidores y solo pueden consultarlos la empresa para la que trabaja el usuario y el personal 
+                autorizado de Sud Solutions para brindar soporte técnico. Conservamos estos datos mientras la 
+                empresa cliente mantenga su cuenta activa o durante el tiempo necesario para cumplir con las 
+                finalidades descritas.
+              </p>
               <p className="text-gray-300 leading-relaxed text-lg text-justify">
                 Sud Solutions puede divulgar su información a las autoridades competentes en términos 
                 de la legislación aplicable; cualquier transferencia de sus datos personales sin 

@@ -14,7 +14,7 @@ const SimpleProcess = () => {
       number: 2,
       icon: <FiCreditCard className="w-6 h-6 text-[#9BBF5F]" />,
       title: "Paga",
-      description: "Realiza el pago de implementación ($8,400 con descuento) para activar tu cuenta Ananta."
+      description: "Realiza el pago de implementación para activar tu cuenta Ananta."
     },
     {
       number: 3,
